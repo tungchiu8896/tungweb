@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 變數/值 比較運算子 變數/值
+        // 相等 ==
+        // 不相等 !=
+
+        //預設帳號:abc 預設密碼:1234
+        let aco='abc';
+        let sec='1234';
+
+        if(aco=='abc' && sec=='1234') {
+        console.log('帳號正確')
+        }else if(aco=='abc' && sec!='1234') {
+            console.log('密碼err')
+        }else if(aco!='abc' && sec=='1234') {
+            console.log('帳號err')
+        }else if(aco!='abc' && sec!='1234')  {
+            console.log('帳密err')
+        } //最後一段條件不一定要寫 因為前面全部不符合 就會滿足最後一個條件
+
+    </script>
+</body>
+</html>

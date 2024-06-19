@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 計算BMI -->
+    <!-- 體重/身高(m)的平方 -->
+    <script>
+        let high=1.57;
+        let weight=45;
+        let bmi;
+        bmi=weight/(high*high);
+        bmi=bmi.toFixed(2);
+        bmi=Number(bmi);
+        console.log(bmi);
+
+        if (bmi<18.5) {
+            console.log('體重過輕');
+        }
+        if (bmi>=18.5 && bmi<24) {
+            console.log('正常範圍');
+        }
+        if (bmi>=24 && bmi<27) {
+            console.log('過重');
+        }
+        if (bmi>=27 && bmi<30) {
+            console.log('輕度肥胖');
+        }
+        if (bmi>=30 && bmi<35) {
+            console.log('中度肥胖');
+        }
+    </script>
+</body>
+</html>
