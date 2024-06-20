@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-image: url(./images/bg.jpg);
+    font-size: 15px; /* 改變內文 <p></p> 字體大小 */
+}
+img {
+    display: block;
+}
+
+.box{
+    width: 1000px;
+    margin: 0 auto; /* 間距(auto)自動偵測必須搭配寬度(width) */
+}
+.btn {
+    float: left; /* 自動抓內容的尺寸 依序往空白地方併排 打fll */
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 150%;/* 相等 font-size: 1.5em */
+}
+p {
+    font-size: 1em;/* <p>預設font-size: 1em */
+}
