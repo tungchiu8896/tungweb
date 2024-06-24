@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //使用輸入視窗prompt
+        //輸入分數
+        // 1.檢查是否及格
+
+        let b;
+        b = window.prompt('檢查是否及格'); //window可省略
+        if(b==null); //檢查是否按了取消
+        else{ //檢查是否為有效分數範圍
+        if (b >= 60 && b <= 100)
+            window.alert(b+'及格');
+        else if (b < 60 && b >= 0)
+            window.alert(b+'不及格');
+        else
+            window.alert(b+'無效分數');
+        }
+
+        // 老師示範正確寫法
+        // 巢狀較複雜
+        let score;
+        score=prompt('輸入分數','60');
+
+        if(score===null){
+            console.log('您按了取消');
+        }else {
+            // 轉換字串分數為數值分數
+            score=Number(score);
+            // 檢查是否為非數值的字串轉換後為NaN
+            if(isNaN(score)) {
+                console.log('輸入的分數err');
+            }else{
+                // 檢查是否唯有效分數範圍
+                
+                if(score<0 || score>100){
+                    console.log(score+'不是有效範圍')
+                    }else{
+                        // 檢查是否及格
+                        if(score>=60){
+                            console.log('及格')
+                        }else{
+                            console.log('不及格')
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

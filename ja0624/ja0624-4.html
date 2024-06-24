@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 管理上及視覺上相對舒服簡單
+        // 使用輸入視窗prompt
+
+        let score;
+        score=prompt('請輸入分數');
+        // 檢查確認變數是否為數字
+        let intScore=Number(score); 
+
+        // 檢查是否按了取消
+        if(score==null){
+            console.log('您按了取消');
+        }else if(score ==''){
+            console.log('分數不能空白');
+        }else if(intScore>100 || intScore<0){
+            console.log('分數不再有效範圍內');
+        }else if(intScore>=60){
+            console.log('及格');
+        }else if(intScore<=60){
+            console.log('不及格');
+        }else{
+            // 以上條件都不成立
+            console.log('分數輸入錯誤');
+        }
+    </script>
+</body>
+</html>
