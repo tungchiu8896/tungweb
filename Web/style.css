@@ -1,25 +1,71 @@
 body {
     margin: 0;
     background-image: url(./images/bg.jpg);
-    font-size: 15px; /* 改變內文 <p></p> 字體大小 */
+    font-size: 15px;
+    /* 改變內文 <p></p> 字體大小 */
 }
+
 img {
     display: block;
 }
-
-.box{
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+.box {
     width: 1000px;
-    margin: 0 auto; /* 間距(auto)自動偵測必須搭配寬度(width) */
+    margin: 0 auto;
+    /* 間距(auto)自動偵測必須搭配寬度(width) */
 }
+
 .btn {
-    float: left; /* 自動抓內容的尺寸 依序往空白地方併排 打fll */
+    float: left;
+    /* 自動抓內容的尺寸 依序往空白地方併排 打fll */
 }
+
+.col {
+    font=size: 12px;
+    float: left;
+    width: 446px;
+    /* 文字沒有固定尺寸 所以需自行設定尺寸 */
+    border: 2px dotted #ffffff;
+    /* 尺寸顏色不一定要寫 樣式一定要寫 */
+    margin: 10px;
+    /* 外距 框線以外的距離 */
+    padding: 15px;
+    /* 內距 框線以內的距離 */
+}
+
+.col span {
+    color: rgb(167, 13, 223);
+}
+address {
+    font-style: normal;
+}
+hr {
+    border: #995d33 1px solid;
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
+
 h2 {
-    font-size: 150%;/* 相等 font-size: 1.5em */
+    font-size: 130%;
+    /* 相等 font-size: 1.5em */
 }
+
 p {
-    font-size: 1em;/* <p>預設font-size: 1em */
+    font-size: 1em;
+    /* <p>預設font-size: 1em */
+}
+
+.footer {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    /* 純設置文字置中 */
+    border-top: dotted 2px #fff;
+    padding: 20px 0;
 }
