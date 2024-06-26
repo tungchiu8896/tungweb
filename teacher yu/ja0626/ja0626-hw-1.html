@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作業1：猜數字</title>
 </head>
+
 <body>
-    
+    <script>
+        let answer = 99
+        for (i = 1; i <= 3; i++) {
+            let input = Number(prompt('請輸入數字'));
+
+            if (input == null) {
+                document.write('您按了取消');
+            } else if{
+                document.write(`${input}<br>`);
+            }else{
+                (input==answer);
+        document.write('99+<br>');
+            }
+        }
+        document.write('答錯了');
+        
+        
+        </script>
 </body>
+
 </html>
