@@ -29,7 +29,7 @@ h6 {
     font-weight: normal;
 }
 
-/* 重置列表 */
+/* 重置列表 讓點點消失 */
 ul,
 ol {
     list-style: none;
