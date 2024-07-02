@@ -9,23 +9,23 @@
 
 <body>
     <script>
+//老師抱歉 我寫一個禮拜寫不出來 救救我
         let answer = 99
+        let again =''
+
         for (i = 1; i <= 3; i++) {
             let input = Number(prompt('請輸入數字'));
-
-            if (input == null) {
-                document.write('您按了取消');
-            } else if{
-                document.write(`${input}<br>`);
-            }else{
-                (input==answer);
-        document.write('99+<br>');
+            while (again){
+            const result=foo();
+            if(answer!=input){
+                console.log(`${again}`);
+            }if (answer==input){
+            console.log(`${answer}答對了`);
+            break;
             }
         }
-        document.write('答錯了');
-        
-        
-        </script>
+    }
+    </script>
 </body>
 
 </html>
