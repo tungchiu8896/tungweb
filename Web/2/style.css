@@ -1,89 +1,149 @@
-@charset "UTF-8"; /* 一定要在行數1 */
+@charset "UTF-8";
+
+/* 一定要在行數1 */
 /* 重置所有標籤的樣式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
-    /* 重置字體 */
-    body {
+}
+
+/* 重置字體 */
+body {
     font-family:
-    /*西文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
-    /*中文*/ "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;  
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
-    }
-    /* 重置標題 */
-    h1, h2, h3, h4, h5, h6 {
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
-    }
-    /* 重置列表 */
-    ul, ol {
+}
+
+/* 重置列表 */
+ul,
+ol {
     list-style: none;
-    }
-    /* 重置圖片 */
-    img {
+}
+
+/* 重置圖片 */
+img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
-    }
-    /* 重置連接 */
-    a {
-        display: block;
+}
+
+/* 重置連接 */
+a {
+    display: block;
     text-decoration: none;
     color: :#444;
-    }
-    /* 共用區 */
-    .btn-s {
+}
+p {
+        font-size: .8rem;
+        line-height: 20px;
+}
+
+/* 共用區 */
+.btn-s {
     background-color: white;
-    width: auto!important;
+    width: auto !important;
     height: 35px;
     line-height: 30px;
     padding: 0 10px;
-    }
-    /* 首頁區 */
-    #topbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 30px;
-    }
-    .logo {
-        width: 65px;
-    }
-    .icon-line:hover
-    .navigation icon a {
-        width: 35px;
-        height: 35px;
-        border: solid 1px;
-    }
-    /* 只有svg會自動等比例縮放 其他檔案會維持原尺寸 */
-    .icon-fb {
-        background-image: url(../2/images/icon-fb.svg);
-        background-size: 100%;
-    }
-    .icon-ig {
-        background-image: url(../2/images/icon-ig.svg);
-    }
-    .icon-line {
-        background-image: url(../2/images/icon-line.svg);
-    }
-    .navigation .menu {
-        display: flex;
-        margin: 15px 0; /* 控制複層的外距 */
-    }
-        .navigation .menu li {
-border-left: solid 1px #444;
-        }
-            .navigation .menu li:first-child {
-                border: none;
-            }
-    .navigation .menu a {
-        
-        font-size: .9rem;
-        line-height: 1;
-        margin: 0 20px;
-        border-bottom: solid 2px transparent;
-    }
-    .navigation .menu a 
+    border-radius;
+    : 99px;
+    transition: .35s ease-in-out;
+}
+
+.btn-s:hover {
+    background-color: #444;
+    color: white;
+}
+
+/* 首頁區 */
+#topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.logo {
+    width: 65px;
+}
+
+.icon-line:hover .navigation {
+    display: flex;
+    flex-direction: column;
+    /* 主軸垂直 */
+    align-items: flex-end;
+    /* 副軸水平置底 */
+}
+
+.navigation icon a {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    transition: all .35s ease-in-out;
+}
+
+/* 只有svg會自動等比例縮放 其他檔案會維持原尺寸 */
+.icon-fb {
+    background-image: url(../2/images/icon-fb.svg);
+}
+
+.icon-fb:hover {
+    background-image: url(../2/images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+    background-image: url(../2/images/icon-ig.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../2/images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../2/images/icon-line.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../2/images/icon-line-hover.svg);
+}
+
+.navigation .menu {
+    display: flex;
+    margin: 15px 0;
+    /* 控制複層的外距 */
+}
+
+.navigation .menu li {
+    border-left: solid 1px #444;
+}
+
+.navigation .menu li:first-child {
+    border: none;
+}
+
+.navigation .menu a {
+
+    font-size: .9rem;
+    line-height: 1;
+    margin: 0 20px;
+    border-bottom: solid 2px transparent;
+    color: #222;
+}
+
+.navigation .menu a
