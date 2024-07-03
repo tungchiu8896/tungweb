@@ -9,7 +9,9 @@
 
 <body>
     <script>
-//老師抱歉 我寫一個禮拜寫不出來 救救我
+        //老師抱歉 我寫一個禮拜寫不出來 救救我
+
+        /*
         let answer = 99
         let again =''
 
@@ -25,6 +27,21 @@
             }
         }
     }
+        */
+
+        let answer = 'n' //預設沒有答對
+        for (i = 1; i <= 3; i++) {
+            let result = prompt('請輸入數字');
+            document.write(`第${i}次：${result}<br>`);
+            if (result == '99') {
+                document.write('答對了');
+                answer = 'y';
+                break;
+            }
+        }
+        if (answer == 'n') {
+            document.write('挑戰失敗');
+        }
     </script>
 </body>
 
