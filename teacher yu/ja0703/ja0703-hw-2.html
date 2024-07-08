@@ -44,6 +44,21 @@
             }
         }
 
+       
+        function playgame() {
+            let guess=Math.floor(Math.random() * 100)+1;
+        alert(guess);
+
+            while(true) {
+                let answer=prompt('請輸入數字');
+                console.log(answer);
+
+                if (answer==guess) {
+                    break;
+                }
+            }
+        }
+
 
     </script>
 </body>
