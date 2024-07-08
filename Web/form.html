@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>表單模板</title>
+    <style>
+        #form-member-edit>* {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #form-member-edit label {
+            line-height: 1;
+            margin-top: 25px;
+        }
+
+        #username {
+            width: 150px;
+        }
+    </style>
 </head>
+
 <body>
     <!-- 搜尋欄位 -->
     <form action="" method="post" name="form-search-product" id="form-search-product" title="搜尋表單"></form>
@@ -12,6 +29,127 @@
     <input type="search" name="input-search" id="input-search" title="產品搜尋欄位" placeholder="請輸入關鍵字">
     <input type="submit" value="按它" name="btn-search" id="btn-search" title="搜尋按鈕">
     <!-- 會員資料修改表單 -->
-    <form action="" method="post" name="form-member-edit" id="form-member-edit" title="會員資料修改表單"></form>
+    <form action="" method="post" name="form-member-edit" id="form-member-edit" title="會員資料修改表單">
+
+        <header>
+            <h2>會員資料修改</h2>
+            <small>[*]為必填</small>
+        </header>
+
+        <label for="">*姓名:</label>
+        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
+            autofocus>
+        <!-- required必填/autocomplete(抓取輸入過的紀錄)/autofocus(自動聚焦 一個檔案裡只能設定一次) -->
+
+        <label for="account">帳號:</label>
+        <input type="text" name="account" id="account" title="帳號欄位禁用不可修改" value="abc123" disabled>
+        <!-- disabled:禁用，推薦使用，樣式較明確，使用者容易理解 -->
+
+        <label for="idnumber">身份證字號:</label>
+        <input type="text" name="idnumber" id="idnumber" title="身份證字號欄位不可修改" value="A123456789" readonly>
+        <!-- readonly:只讀，不推薦使用，樣式不明確，使用者容易誤會 -->
+
+        <label for="">聯絡電話:</label>
+        <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入聯絡電話">
+
+        <label for="">手機號碼:</label>
+        <input type="mobile" name="mobile" id="mobile" title="手機號碼欄位" placeholder="共10碼" maxlength="10">
+        <!-- maxlength限制最大字數 -->
+
+        <label for="password">修改密碼:</label>
+        <input type="password" name="password" id="password">
+
+        <label for="password-1">修改密碼:</label>
+        <input type="password" name="password" id="password-1">
+        <!-- id不能重複 -->
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" title="email" placeholder="請輸入電子郵件" required>
+
+        <label for="birthday">生日:</label>
+        <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日">
+
+        <label for="file">上傳檔案 : <small>(檔案體積不可以超過1MB 僅可上傳以下檔案類型.jpg"、.gif、.png、.pdf)</small></label>
+        <input type="file" name="file" id="file" title="上傳檔案欄位" multiple>
+        <!-- multiple允許上傳多個檔案，通常會加此屬性 -->
+
+        <label for="">性別:</label>
+        <select name="gender" id="gender" title="請選擇性別">
+            <option value="">請選擇</option>
+            <option value="生理男">生理男</option>
+            <option value="生理女">生理女</option>
+        </select>
+        <!-- select預設顯示第一個選項，所以要自己在第一個選項設定「請選擇」不給值 -->
+
+        <label for="other">其他類別:</label>
+        <select name="other" id="other" title="類別選項">
+            <option value="">請選擇</option>
+            <optgroup label="分類1">
+                <option value="選項1">選項1</option>
+                <option value="選項2">選項2</option>
+                <option value="選項3">選項3</option>
+            </optgroup>
+            <optgroup label="分類2">
+                <option value="選項1">選項1</option>
+                <option value="選項2">選項2</option>
+                <option value="選項3">選項3</option>
+            </optgroup>
+        </select>
+        <!-- optgroup選項分類，需搭配laber屬性設定分類名稱 -->
+
+        <fieldset>
+            <legend>會員類型:</legend>
+            <input type="radio" name="member" id="member-1" value="金卡會員">
+            <label for="member-1">金卡會員</label>
+
+            <input type="radio" name="member" id="member-2" value="銀卡會員">
+            <label for="member-2">銀卡會員</label>
+
+            <input type="radio" name="member" id="member-3" value="銅卡會員">
+            <label for="member-3">銅卡會員</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>其他類型:</legend>
+            <input type="radio" name="category" id="category-1" value="類型一">
+            <label for="category-1">類型一</label>
+
+            <input type="radio" name="category" id="category-2" value="類型二">
+            <label for="category-2">類型二</label>
+
+            <input type="radio" name="category" id="category-3" value="類型三">
+            <label for="category-3">類型三</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>訂閱內容:</legend>
+            <input type="checkbox" name="order" id="order-1" value="國際">
+            <label for="order-1">國際</label>
+
+            <input type="checkbox" name="order" id="order-2" value="社會">
+            <label for="order-2">社會</label>
+
+            <input type="checkbox" name="order" id="order-3" value="政治">
+            <label for="order-3">政治</label>
+
+            <input type="checkbox" name="order" id="order-4" value="娛樂">
+            <label for="order-4">娛樂</label>
+
+            <input type="checkbox" name="order" id="order-5" value="生活">
+            <label for="order-5">生活</label>
+            <!-- checkbox為複選，必須帶值，才能回傳到資料庫 -->
+        </fieldset>
+
+
+
+
+
+
+        <div>
+            <input type="submit" name="btn_submit--member" id="btn_submit--member" title="會員資料修改重填" value="重填">
+            <input type="reset" name="btn_reset--member" id="btn_reset--member" title="會員資料送出" value="送出">
+        </div>
+    </form>
 </body>
+
 </html>
