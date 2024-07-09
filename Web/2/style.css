@@ -1,6 +1,13 @@
 @charset "UTF-8";
-
 /* 一定要在行數1 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+/* 一定要在第二行 */
+
+@font-face {
+    font-family: LEMONMILK;
+    src: url(./webfont/LEMONMILK-Bold.otf);
+}
+
 /* 重置所有標籤的樣式 */
 * {
     margin: 0;
@@ -17,6 +24,7 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    background-color: cornflowerblue;
 }
 
 /* 重置標題 */
@@ -47,11 +55,12 @@ img {
 a {
     display: block;
     text-decoration: none;
-    color: :#444;
+    color: #444;
 }
+
 p {
-        font-size: .8rem;
-        line-height: 20px;
+    font-size: .8rem;
+    line-height: 20px;
 }
 
 /* 共用區 */
@@ -61,8 +70,7 @@ p {
     height: 35px;
     line-height: 30px;
     padding: 0 10px;
-    border-radius;
-    : 99px;
+    border-radius: 99px;
     transition: .35s ease-in-out;
 }
 
@@ -77,6 +85,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 30px;
+
 }
 
 .logo {
@@ -100,27 +109,27 @@ p {
 
 /* 只有svg會自動等比例縮放 其他檔案會維持原尺寸 */
 .icon-fb {
-    background-image: url(../2/images/icon-fb.svg);
+    background-image: url(./images/icon-fb.svg);
 }
 
 .icon-fb:hover {
-    background-image: url(../2/images/icon-fb-hover.svg);
+    background-image: url(./images/icon-fb-hover.svg);
 }
 
 .icon-ig {
-    background-image: url(../2/images/icon-ig.svg);
+    background-image: url(./images/icon-ig.svg);
 }
 
 .icon-ig:hover {
-    background-image: url(../2/images/icon-ig-hover.svg);
+    background-image: url(./images/icon-ig-hover.svg);
 }
 
 .icon-line {
-    background-image: url(../2/images/icon-line.svg);
+    background-image: url(./images/icon-line.svg);
 }
 
 .icon-line:hover {
-    background-image: url(../2/images/icon-line-hover.svg);
+    background-image: url(./images/icon-line-hover.svg);
 }
 
 .navigation .menu {
@@ -129,21 +138,76 @@ p {
     /* 控制複層的外距 */
 }
 
-.navigation .menu li {
-    border-left: solid 1px #444;
+.navigation .menu li:not(:first-child) {
+    border-right: solid 1px #444;
 }
 
-.navigation .menu li:first-child {
-    border: none;
+.navigation .menu a:hover {
+    border-bottom: solid 2px #444;
+    transition: .35s ease-in-out;
 }
 
-.navigation .menu a {
-
-    font-size: .9rem;
-    line-height: 1;
-    margin: 0 20px;
-    border-bottom: solid 2px transparent;
-    color: #222;
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    /* 變垂直排 */
+    align-items: center;
+    /* 水平置中 */
 }
 
-.navigation .menu a
+.title h2 {
+    font-family: LEMONMILK, sans-serif;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    border-bottom: 2px solid rgb(49, 49, 49);
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    line-height: 2rem;
+}
+/* 背景影像基本設定 */
+#contact {
+    background-image: url(./images/bg_contact.jpg);
+    background-size: cover; /* 自動剪裁 */
+    background-position: center center; /* XY軸 置中 */
+    background-attachment: fixed; /* 固定背景 */
+}
+#form--contact {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+#form--contact label {
+    font-size: .85rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+}
+
+#form--contact input,#form--contact textarea {
+    padding: 6px; /* 輸入格內距 高度 */
+    color: darkred;
+    font-weight: 600;
+}
+
+#form--contact input::placeholder,#form--contact textarea::placeholder {
+    font-size: .8rem;
+    font-weight: 400;
+    color: cornflowerblue;
+}
+
+#form--contact small{
+    font-size: ;
+}
