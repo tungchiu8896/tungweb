@@ -32,16 +32,29 @@
                 return true;
             }
             return false;
-
-            // 簡化寫法
-            // return n % 2 == 1;   //n=1 => 1%2==1 => true
         })
+
+            /*
+            簡化寫法
+            let odds = arr2.filter((n) => {
+            return n % 2 == 1;   //n=1 => 1%2==1 => true
+            })
+            */
+
+            /*
+            再簡化寫法
+            let odds = arr2.filter((n) =>  n % 2 == 1;
+            */
+        
         console.log('篩選後的陣列奇數內容:');
         console.log(odds);
         console.log('odds資料型別');
         console.log(typeof (odds));
         console.log('篩選後原陣列內容:');
         console.log(arr2);
+
+        // 匿名函式
+        
     </script>
 </body>
 
