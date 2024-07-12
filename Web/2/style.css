@@ -12,7 +12,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+    /* 不累加內距padding與邊框border */
 }
 
 /* 重置字體 */
@@ -28,12 +29,18 @@ body {
 }
 
 /* 重置標題 */
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
 
 /* 重置列表 讓點點消失 */
-ul,ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -74,6 +81,23 @@ p {
     color: white;
 }
 
+#form--contact input,
+#form--contact textarea,
+.navigation .menu {
+    /* 玻璃擬態效果 */
+    border-radius: 10px;
+    /* 邊框圓角 */
+    background-image: linear-gradient(5deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.3));
+    background-color: transparent;
+    /* 取消表單元件的預設背景色 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .2),
+        inset -1px -1px rgba(255, 255, 255, .8);
+    backdrop-filter: blur(5px);
+
+    border: none;
+    /* 邊框去除 */
+}
+
 /* 首頁區 */
 #topbar {
     display: flex;
@@ -84,6 +108,11 @@ p {
 
 .logo {
     width: 65px;
+}
+
+.logo img {
+    filter: drop-shadow(2px 3px #fff);
+    /* logo陰影 */
 }
 
 .navigation {
@@ -137,7 +166,7 @@ p {
 }
 
 .navigation .menu li:first-child {
-    border:none;
+    border: none;
 }
 
 .navigation .menu a {
@@ -159,6 +188,7 @@ section {
     align-items: center;
     height: 100vh;
 }
+
 .title {
     display: flex;
     flex-direction: column;
@@ -182,16 +212,22 @@ section {
     letter-spacing: .1rem;
     line-height: 2rem;
 }
+
 /* 背景影像基本設定 */
 #contact {
     background-image: url(./images/bg_contact.jpg);
-    background-size: cover; /* 自動剪裁 */
-    background-position: center center; /* XY軸 置中 */
-    background-attachment: fixed; /* 固定背景 */
+    background-size: cover;
+    /* 自動剪裁 */
+    background-position: center center;
+    /* XY軸 置中 */
+    background-attachment: fixed;
+    /* 固定背景 */
 }
+
 #form--contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 主軸(垂直) */
+    align-items: center;    /* 副軸(水平置中) */
     width: 30%;
 }
 
@@ -199,22 +235,104 @@ section {
     font-size: .85rem;
     line-height: 2rem;
     margin-top: 1rem;
+    width: 100%;
 }
 
-#form--contact input,#form--contact textarea {
-    padding: 6px; /* 輸入格內距 高度 */
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: 6px;
+    /* 輸入格內距 高度 */
     color: darkred;
     font-weight: 600;
 }
 
-#form--contact input::placeholder,#form--contact textarea::placeholder {
+#form--contact input:focus,
+#form--contact textarea:focus {
+    outline: none;
+    /* 取消內邊框 */
+}
+
+#form--contact input::placeholder,
+#form--contact textarea::placeholder {
     font-size: .8rem;
     font-weight: 400;
     color: cornflowerblue;
 }
 
-#form--contact small{
+#form--contact small {
     font-size: .8rem;
     color: cornflowerblue;
     padding: 15px 5px;
 }
+
+/* 動態按鈕 */
+#btn_contact--submit {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    opacity: 1;
+    background-color: #ffffff;
+    border: 1px solid rgba(22, 76, 167, 0.6);
+    }
+
+#btn_contact--submit span {
+    color: #164ca7;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    }
+
+#btn_contact--submit:hover {
+    animation: rotate 0.7s ease-in-out both;
+    }
+
+#btn_contact--submit:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+    }
+    
+@keyframes rotate {
+    0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    }
+
+@keyframes storm {
+    0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    }
