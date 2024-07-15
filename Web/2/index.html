@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico">
 </head>
+
 <body>
     <!-- 頁首區 -->
     <header id="topbar">
@@ -21,7 +23,7 @@
             <ul class="icon">
                 <li><a class="icon-fb" href="#"></a></li>
                 <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line"href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
                 <li><a class="login" herf="./login.html">Login</a></li>
             </ul>
             <!-- main btn 縮寫(ul.menu>li*6>a) -->
@@ -36,6 +38,11 @@
         </nav>
     </header>
     <main>
+        <section id="banner"></section>
+        <section id="news"></section>
+        <section id="service"></section>
+        <section id="video"></section>
+        <section id="about"></section>
         <section id="contact">
             <header class="title">
                 <h2>CONTACT US</h2>
@@ -43,28 +50,32 @@
             </header>
             <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
                 <label for="">*姓名:</label>
-        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
-            autofocus>
+                <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
+                    autofocus>
 
-            <label for="">聯絡電話:</label>
-        <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入聯絡電話" autocomplete>
+                <label for="">聯絡電話:</label>
+                <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入聯絡電話" autocomplete>
 
-        <label for="email">*Email:</label>
-        <input type="email" name="email" id="email" title="email" placeholder="請輸入電子郵件" required>
+                <label for="email">*Email:</label>
+                <input type="email" name="email" id="email" title="email" placeholder="請輸入電子郵件" required>
 
-        <label for="message">留言:</label>
-        <textarea name="message" id="message" title="留言欄位" rows="10" placeholder="請輸入您的建議"></textarea>
-        <small>此表單為作業製作，不具有商業性質及功能</small>
+                <label for="message">留言:</label>
+                <textarea name="message" id="message" title="留言欄位" rows="10" placeholder="請輸入您的建議"></textarea>
+                <small>此表單為作業製作，不具有商業性質及功能</small>
 
-        <!-- 表單按鈕一定要放在form裡面 -->
-        <button name="btn_contact--submit" id="btn_contact--submit" type="submit" title="送出按鈕">
-            <span>送出</span>
-        </button>
+                <!-- 表單按鈕一定要放在form裡面 -->
+                <button name="btn_contact--submit" id="btn_contact--submit" type="submit" title="送出按鈕">
+                    <span>送出</span>
+                </button>
 
             </form>
+            <!-- 裝飾花 -->
+            <div class="flower_r"><img src="./images/flower_r.png" alt="紅花"></div>
+            <div class="flower_w"><img src="./images/flower_w.png" alt="白花"></div>
         </section>
     </main>
     <footer></footer>
 
 </body>
+
 </html>

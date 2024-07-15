@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 取得亂數  => 0-1之間
+        let r1 = Math.random();
+        console.log(r1);
+
+        // 小數點兩位
+        //方法一
+        //toFixed會變成字串 所以要用Number轉回數字
+        console.log(Number(r1.toFixed(2))); //會保存小數點
+        console.log(parseInt(r1.toFixed(2))); //不會保存小數點
+
+        //方法二
+        // 1.先乘100
+        console.log(r1 * 100);
+        // 2.去除小數 無條件捨去
+        console.log(Math.floor(r1 * 100));
+        // 3.除以100
+        console.log((Math.floor(r1 * 100)) / 100);
+
+
+
+        // 找出亂數1-5任意值
+        let r2 = Math.random();
+        console.log(r2); //取亂數
+        console.log(r2 * 5); //讓小數點往後移
+        console.log((r2 * 5) + 1); //讓數字介於1-5點多之間
+        console.log(Math.floor(r2 * 5) + 1); //去掉小數點
+        // 簡化寫法
+        let r2 = Math.floor(Math.random()*5)+1;
+        console.log(r2);
+
+        // 宣告一個陣列
+        let arr1 = [1, 100, 50, 3, 5];
+        // 方法一:indexOf(item)
+        // 尋找陣列是否存在
+        let result=arr1.indexOf(Math.floor(r2 * 5) + 1);
+        // 簡化寫法
+        let result=arr1.indexOf(r2);
+        console.log(result);
+        
+        // 陣列中若沒有找到亂數值 加入陣列
+        if(result==-1){
+            arr1.push(Math.floor(r2 * 5) + 1);
+            console.log(arr1);
+        }
+        
+
+        // 方法二:includes(item)
+        // 存在 => true
+        // 不存在 => false
+
+        let result2=arr1.includes(Math.floor(r2*5)+1);
+        // 簡化寫法
+        let result2=arr1.includes(r2);
+        console.log(result2);
+
+        if (result2==false){
+            arr1.push(Math.floor(r2 * 5) + 1);
+            // 簡化寫法
+            arr1.push(r2);
+        }
+        console.log(arr1);
+
+        
+
+
+    </script>
+</body>
+
+</html>

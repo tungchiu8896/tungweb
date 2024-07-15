@@ -83,23 +83,25 @@ p {
 
 #form--contact input,
 #form--contact textarea,
-.navigation .menu {
+#topbar .menu,
+#btn__contact--submit {
     /* 玻璃擬態效果 */
-    border-radius: 10px;
     /* 邊框圓角 */
-    background-image: linear-gradient(5deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.3));
+    background-image: linear-gradient(15deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.3));
     background-color: transparent;
     /* 取消表單元件的預設背景色 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .2),
         inset -1px -1px rgba(255, 255, 255, .8);
     backdrop-filter: blur(5px);
-
-    border: none;
-    /* 邊框去除 */
+    border: none; /* 邊框去除 */
 }
 
 /* 首頁區 */
 #topbar {
+    position: fixed; /* 固定定位 不會跟著卷軸走 */
+    z-index: 999;    /* 讓固定的topbar浮在最上層 */
+    width: 100%;     /* 定位會變成抓內容的尺寸 所以要手動設定回w100% */
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,6 +123,10 @@ p {
     /* 主軸垂直 */
     align-items: flex-end;
     /* 副軸水平置底 */
+}
+
+.navigation .icon {
+    display: flex;
 }
 
 .navigation .icon a {
@@ -158,6 +164,8 @@ p {
 .navigation .menu {
     display: flex;
     margin: 15px 0;
+    padding: 10px;
+    border-radius: 30px;
     /* 控制複層的外距 */
 }
 
@@ -213,8 +221,12 @@ section {
     line-height: 2rem;
 }
 
-/* 背景影像基本設定 */
+/* 聯絡我們區 */
 #contact {
+    /* 專門為absolute的定位依據 */
+    position: relative;
+    overflow: hidden;
+    /* 背景影像基本設定 */
     background-image: url(./images/bg_contact.jpg);
     background-size: cover;
     /* 自動剪裁 */
@@ -223,6 +235,22 @@ section {
     background-attachment: fixed;
     /* 固定背景 */
 }
+
+    /* 裝飾花 */
+    .flower_r {
+        position:absolute;
+        left: -100px;
+        bottom: -80px;
+        width: 300px;
+        transform: rotate(15deg);
+    }
+    .flower_w {
+        position: absolute;
+        right: -100px;
+        top: 50px;
+        width: 300px;
+        transform: rotate(-15deg);
+    }
 
 #form--contact {
     display: flex;
@@ -269,27 +297,39 @@ section {
 
 /* 動態按鈕 */
 #btn_contact--submit {
-    position: relative;
-    outline: none;
-    text-decoration: none;
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; 取消文字裝置底線 */
     border-radius: 50px;
+    /* 定義起始位置 */
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
+    /* 指標樣式 */
+    cursor: pointer; /* 指標樣式 手型 */
+    /* text-transform: uppercase; */
     height: 60px;
     width: 210px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid rgba(22, 76, 167, 0.6);
+    /* opacity: 1; 透明度 */
+    background-color: transparent;
+    border:none;
+    }
+
+    #btn_contact--submit {
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.3));
+        /* 取消表單元件的預設背景色 */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .2),
+            inset -1px -1px rgba(255, 255, 255, .8);
+        backdrop-filter: blur(5px);
     }
 
 #btn_contact--submit span {
     color: #164ca7;
     font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.7px; /* 每個字左邊加字距 */
+    padding-left: 1rem; /* 區塊置中時 因為字距不會對齊 而補回字距的間距 */
     }
 
 #btn_contact--submit:hover {
@@ -303,36 +343,37 @@ section {
     
 @keyframes rotate {
     0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) /* translate3d(0, 0, 0) */;
     }
     25% {
-    transform: rotate(3deg) translate3d(0, 0, 0);
+    transform: rotate(3deg) /* translate3d(0, 0, 0) */;
     }
     50% {
-    transform: rotate(-3deg) translate3d(0, 0, 0);
+    transform: rotate(-3deg) /* translate3d(0, 0, 0) */;
     }
     75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
+    transform: rotate(1deg) /* translate3d(0, 0, 0) */;
     }
     100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) /* translate3d(0, 0, 0) */;
     }
     }
 
 @keyframes storm {
     0% {
-    transform: translate3d(0, 0, 0) translateZ(0);
+    transform: translate3d(0, 0, 0) /* translateZ(0) */;
     }
     25% {
-    transform: translate3d(4px, 0, 0) translateZ(0);
+    transform: translate3d(4px, 0, 0) /* translateZ(0) */;
     }
     50% {
-    transform: translate3d(-3px, 0, 0) translateZ(0);
+    transform: translate3d(-3px, 0, 0) /* translateZ(0) */;
     }
     75% {
-    transform: translate3d(2px, 0, 0) translateZ(0);
+    transform: translate3d(2px, 0, 0) /* translateZ(0) */;
     }
     100% {
-    transform: translate3d(0, 0, 0) translateZ(0);
+    transform: translate3d(0, 0, 0) /* translateZ(0) */;
     }
     }
+
