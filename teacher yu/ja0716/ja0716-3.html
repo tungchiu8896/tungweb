@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 物件模組化 => 物件樣板 => 字首大寫
+        // 建立物件樣版 => User
+        function User(brand, color, size){
+            this.brand=brand;
+            this.color=color;
+            this.size=size;
+            this.showMsg=function(){
+                console.log(`品牌:${this.brand},顏色:${this.color},尺寸:${this.size}`);
+            }
+        }
+
+        // 把結果套進物件樣版 不同資訊共用一個物件
+        let u1=new User('iphone','black','14');
+        u1.showMsg();
+        let u2=new User('三星','gray','13');
+        u2.showMsg();
+    </script>
+</body>
+</html>
