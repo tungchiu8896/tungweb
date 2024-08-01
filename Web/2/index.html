@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flowershop-html5</title>
-    <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico">
+    <!-- 自訂css -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- 換圖輪播css -->
+    <link rel="stylesheet" href="./carousel.css">
+
 </head>
 
 <body>
@@ -38,7 +42,112 @@
         </nav>
     </header>
     <main>
-        <section id="banner"></section>
+        <!-- 換圖輪播 -->
+        <section id="banner">
+            <div class="content-slider">
+                <!-- 讓js換圖片的切換器 -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <!-- 輪播圖區 -->
+                <div class="slider">
+
+                    <!-- 第一張 -->
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第二張 -->
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第三張 -->
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 第四張 -->
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 第五張 -->
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 輪播張數提示器 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1">
+                            <!-- 進度條 -->
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!--文字區 -->
+                            <!-- <span>01</span> Intro -->
+                        </label>
+
+                        <label for="banner2">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>02</span> Work -->
+                        </label>
+
+                        <label for="banner3">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>03</span> About -->
+                        </label>
+
+                        <label for="banner4">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>04</span> Contacts -->
+                        </label>
+
+                        <label for="banner5">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>04</span> Contacts -->
+                        </label>
+
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <!-- 最新消息 -->
         <section id="news">
             <header class="title">
                 <h2>NEWS</h2>
@@ -81,6 +190,7 @@
                 </article>
             </div>
         </section>
+        <!-- 服務項目 -->
         <section id="service">
             <header class="title">
                 <h2>SERVICE</h2>
@@ -122,6 +232,7 @@
                 </li>
             </ul>
         </section>
+        <!-- 影片 -->
         <section id="video">
             <header class="title">
                 <h2>VIDEO</h2>
@@ -134,6 +245,7 @@
                 <!-- 瀏覽器設定autoplay必須搭配muted才能使用 -->
             </div>
         </section>
+        <!-- 關於我們 -->
         <section id="about">
 
             <div class="content">
@@ -143,8 +255,87 @@
                     <h3>關於我們</h3>
                 </header>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iure magnam vel id sint omnis. Officia impedit tempore porro voluptatibus nobis aperiam facere laudantium cupiditate rem ullam incidunt excepturi delectus, quis distinctio commodi veniam omnis maiores doloremque exercitationem vel, deleniti dolor consequatur. Cupiditate quibusdam magni recusandae delectus perspiciatis mollitia facere laborum amet impedit nam assumenda maiores, hic repellendus pariatur accusamus quasi ipsum consequatur reiciendis labore architecto! Sit ipsum at commodi doloremque pariatur non voluptates perferendis quod mollitia eius repellendus neque officia, recusandae quia ducimus esse saepe placeat explicabo minus consequatur voluptate? Reprehenderit non fugit dolorum, sit illo ullam amet facilis libero! Impedit aliquid totam facere ad nihil, quo eum, corrupti dolores, adipisci sapiente placeat maiores! Deserunt vero sunt veritatis placeat eos ab commodi fugiat recusandae dolorem cumque dolores sint modi, non eaque, iste minus, excepturi praesentium nihil adipisci sequi magni sapiente illum nobis quae! Facilis facere nulla laboriosam laudantium consequatur aperiam, enim expedita dolores illum natus maxime atque distinctio excepturi! Facere, accusamus vero, recusandae officia corrupti modi velit id numquam pariatur vitae natus commodi. Corporis architecto blanditiis deserunt ea? Quia blanditiis non commodi assumenda facere mollitia harum consectetur error architecto rerum recusandae expedita maxime fugit, minima nostrum perferendis maiores quae aut? Aspernatur enim soluta nam inventore, perferendis autem unde eos assumenda, ea temporibus exercitationem veritatis, nihil maiores possimus dolores quam voluptates officia quaerat quos sapiente aliquam! Similique quos velit provident? Odio eveniet, accusamus blanditiis delectus aliquam nostrum cum! Ad, sit perspiciatis inventore numquam itaque dolor velit earum, autem maiores, quidem pariatur nostrum reprehenderit! Officiis velit sequi minima, officia rem reprehenderit ex consequuntur debitis aspernatur voluptatem ab molestias. Ab ullam obcaecati harum, suscipit nulla explicabo, nobis nisi reiciendis quisquam, culpa nesciunt. Eaque maxime odio, praesentium dignissimos quibusdam totam, dolor hic assumenda deserunt aliquam natus nostrum beatae nisi inventore non sunt modi iusto ea neque, provident in explicabo cupiditate. Ipsa, reprehenderit itaque, soluta iure ea ullam magni nemo molestiae minima officiis tenetur consequuntur voluptates ut. Dolores, omnis! Veniam sapiente molestias ipsam reprehenderit laboriosam, quidem explicabo maxime accusamus eligendi odio minima sint quisquam inventore. Praesentium officia commodi ad quos aliquam odio sed voluptate id fuga iste, ullam reiciendis aut dolore, nemo quia dolorem molestiae sapiente neque, libero eligendi ea quaerat similique corrupti exercitationem? Deserunt, distinctio quod vel atque eaque ipsa veniam doloribus hic vero rerum consectetur reprehenderit dolores debitis suscipit sint deleniti aspernatur enim molestias quas at? Distinctio, earum voluptatem. Harum numquam accusamus quae labore sit cupiditate, dicta eos quos temporibus velit exercitationem eum commodi, dignissimos earum aut consectetur soluta officiis quibusdam inventore provident? Doloremque facere veritatis iste eos, facilis sed corporis magni consectetur ipsam soluta autem deleniti neque assumenda quisquam quidem minus! Expedita, perspiciatis! Nisi repellat cum ipsum ab quas laborum ratione magnam incidunt quibusdam. Repellat, error voluptatem ullam porro commodi optio nobis temporibus dicta beatae placeat eius. Nam cum perferendis nisi enim, numquam architecto eaque nemo animi ex ipsam rerum quae, ullam dolorum porro assumenda aliquid quas! Error totam rem repudiandae iure obcaecati impedit voluptatem quo. Ducimus, temporibus rerum perferendis molestiae ut sunt aliquid quisquam, quam alias nihil praesentium sint obcaecati, eum eaque. Voluptatem dicta repellat quas, consequatur ex minima harum quo ipsum repudiandae autem excepturi veniam voluptates ipsa vero quae deserunt, vitae corrupti iusto porro ab officia placeat fugiat omnis modi. Odit officia quas quaerat rem beatae cum dignissimos impedit adipisci sunt deserunt tenetur, ratione molestiae neque laboriosam similique distinctio quisquam, dicta at maiores natus tempora corrupti vitae non. Soluta voluptatum perferendis cupiditate excepturi, non molestiae itaque recusandae porro est ab at quas repudiandae libero rerum atque aperiam adipisci nihil, expedita quam! Expedita accusamus, error accusantium quis in velit atque. Ipsum sed officiis officia sapiente, ut nesciunt quod veritatis distinctio laborum eaque perferendis doloribus excepturi ad accusantium. Explicabo sint dolore repellendus cum ratione facilis earum corporis nobis perspiciatis molestiae dicta vel ipsum, nulla quibusdam obcaecati consectetur magnam veniam dolor distinctio omnis rerum excepturi deleniti. Cum cumque iure totam facere accusantium quidem! Commodi, asperiores esse! Recusandae explicabo laboriosam minima aspernatur in provident! Cum nisi dolorem eveniet qui totam, culpa iure similique accusamus commodi voluptatibus. Laborum doloremque ipsum sed modi placeat doloribus? Cum aliquid eaque suscipit pariatur, nesciunt quidem, praesentium dignissimos laboriosam consectetur voluptas provident perspiciatis officia! Ea aspernatur sunt deserunt neque mollitia. Sint corporis repellendus saepe sit expedita ipsa cum voluptates doloribus ipsum? In omnis nihil minus nam nostrum vitae officiis deserunt eum iste, magni rem a distinctio quos praesentium, harum cum quas cupiditate quisquam voluptas aliquam repudiandae totam voluptatum qui? Iure quo consequuntur voluptate, recusandae illum beatae rem necessitatibus adipisci error illo? Tenetur perspiciatis ea qui odio, inventore similique dicta maiores neque et, commodi, ipsa deserunt! Corporis blanditiis quae sit et laudantium expedita nemo maxime eaque, accusantium amet optio perspiciatis dolores obcaecati sapiente corrupti voluptatum, aut minus magni quas quidem alias nulla? Fugit odio ullam voluptate iure non! Quo voluptatem ab similique, ipsa, debitis deleniti beatae soluta ipsum ut repellendus expedita optio? Libero provident id quos possimus laborum error commodi, pariatur laboriosam nobis! Nobis deleniti culpa enim animi, pariatur quis, deserunt fugit minima rem nam dolor omnis error, quod dolores sed! Nobis a illum dolorum minus voluptas saepe quam ea quasi deserunt temporibus. Eum unde alias mollitia earum tempore ad atque cumque, corrupti ipsa aliquid nostrum cupiditate vel explicabo eius corporis libero quam modi. Porro impedit numquam earum, maxime magni iusto molestias ad, ullam sunt illo labore illum est voluptatem eligendi expedita neque rerum soluta libero aliquid laboriosam, incidunt praesentium. Quam ducimus natus id, amet ex tenetur dolor eveniet error sed iusto nemo eos velit nesciunt cupiditate explicabo sunt, ipsam architecto dolorum quas soluta illo quod excepturi mollitia? Accusantium, incidunt. Vel corrupti maxime ipsa saepe, optio reprehenderit, quos quod culpa excepturi dolor eos nam. Aliquid, dolores tempore minus eligendi, quod sunt, illo ad doloribus odio eveniet numquam fugit dolore ducimus necessitatibus neque? Nulla dolore delectus iure reiciendis dolor numquam? Delectus explicabo perspiciatis eaque dolores atque dolorum! Non quia aperiam eaque ex, soluta voluptate fugiat culpa dignissimos laboriosam sed esse natus adipisci tempora beatae provident excepturi, in repellat recusandae, quam sequi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iure magnam vel id sint omnis.
+                    Officia impedit tempore porro voluptatibus nobis aperiam facere laudantium cupiditate rem ullam
+                    incidunt excepturi delectus, quis distinctio commodi veniam omnis maiores doloremque exercitationem
+                    vel, deleniti dolor consequatur. Cupiditate quibusdam magni recusandae delectus perspiciatis
+                    mollitia facere laborum amet impedit nam assumenda maiores, hic repellendus pariatur accusamus quasi
+                    ipsum consequatur reiciendis labore architecto! Sit ipsum at commodi doloremque pariatur non
+                    voluptates perferendis quod mollitia eius repellendus neque officia, recusandae quia ducimus esse
+                    saepe placeat explicabo minus consequatur voluptate? Reprehenderit non fugit dolorum, sit illo ullam
+                    amet facilis libero! Impedit aliquid totam facere ad nihil, quo eum, corrupti dolores, adipisci
+                    sapiente placeat maiores! Deserunt vero sunt veritatis placeat eos ab commodi fugiat recusandae
+                    dolorem cumque dolores sint modi, non eaque, iste minus, excepturi praesentium nihil adipisci sequi
+                    magni sapiente illum nobis quae! Facilis facere nulla laboriosam laudantium consequatur aperiam,
+                    enim expedita dolores illum natus maxime atque distinctio excepturi! Facere, accusamus vero,
+                    recusandae officia corrupti modi velit id numquam pariatur vitae natus commodi. Corporis architecto
+                    blanditiis deserunt ea? Quia blanditiis non commodi assumenda facere mollitia harum consectetur
+                    error architecto rerum recusandae expedita maxime fugit, minima nostrum perferendis maiores quae
+                    aut? Aspernatur enim soluta nam inventore, perferendis autem unde eos assumenda, ea temporibus
+                    exercitationem veritatis, nihil maiores possimus dolores quam voluptates officia quaerat quos
+                    sapiente aliquam! Similique quos velit provident? Odio eveniet, accusamus blanditiis delectus
+                    aliquam nostrum cum! Ad, sit perspiciatis inventore numquam itaque dolor velit earum, autem maiores,
+                    quidem pariatur nostrum reprehenderit! Officiis velit sequi minima, officia rem reprehenderit ex
+                    consequuntur debitis aspernatur voluptatem ab molestias. Ab ullam obcaecati harum, suscipit nulla
+                    explicabo, nobis nisi reiciendis quisquam, culpa nesciunt. Eaque maxime odio, praesentium
+                    dignissimos quibusdam totam, dolor hic assumenda deserunt aliquam natus nostrum beatae nisi
+                    inventore non sunt modi iusto ea neque, provident in explicabo cupiditate. Ipsa, reprehenderit
+                    itaque, soluta iure ea ullam magni nemo molestiae minima officiis tenetur consequuntur voluptates
+                    ut. Dolores, omnis! Veniam sapiente molestias ipsam reprehenderit laboriosam, quidem explicabo
+                    maxime accusamus eligendi odio minima sint quisquam inventore. Praesentium officia commodi ad quos
+                    aliquam odio sed voluptate id fuga iste, ullam reiciendis aut dolore, nemo quia dolorem molestiae
+                    sapiente neque, libero eligendi ea quaerat similique corrupti exercitationem? Deserunt, distinctio
+                    quod vel atque eaque ipsa veniam doloribus hic vero rerum consectetur reprehenderit dolores debitis
+                    suscipit sint deleniti aspernatur enim molestias quas at? Distinctio, earum voluptatem. Harum
+                    numquam accusamus quae labore sit cupiditate, dicta eos quos temporibus velit exercitationem eum
+                    commodi, dignissimos earum aut consectetur soluta officiis quibusdam inventore provident? Doloremque
+                    facere veritatis iste eos, facilis sed corporis magni consectetur ipsam soluta autem deleniti neque
+                    assumenda quisquam quidem minus! Expedita, perspiciatis! Nisi repellat cum ipsum ab quas laborum
+                    ratione magnam incidunt quibusdam. Repellat, error voluptatem ullam porro commodi optio nobis
+                    temporibus dicta beatae placeat eius. Nam cum perferendis nisi enim, numquam architecto eaque nemo
+                    animi ex ipsam rerum quae, ullam dolorum porro assumenda aliquid quas! Error totam rem repudiandae
+                    iure obcaecati impedit voluptatem quo. Ducimus, temporibus rerum perferendis molestiae ut sunt
+                    aliquid quisquam, quam alias nihil praesentium sint obcaecati, eum eaque. Voluptatem dicta repellat
+                    quas, consequatur ex minima harum quo ipsum repudiandae autem excepturi veniam voluptates ipsa vero
+                    quae deserunt, vitae corrupti iusto porro ab officia placeat fugiat omnis modi. Odit officia quas
+                    quaerat rem beatae cum dignissimos impedit adipisci sunt deserunt tenetur, ratione molestiae neque
+                    laboriosam similique distinctio quisquam, dicta at maiores natus tempora corrupti vitae non. Soluta
+                    voluptatum perferendis cupiditate excepturi, non molestiae itaque recusandae porro est ab at quas
+                    repudiandae libero rerum atque aperiam adipisci nihil, expedita quam! Expedita accusamus, error
+                    accusantium quis in velit atque. Ipsum sed officiis officia sapiente, ut nesciunt quod veritatis
+                    distinctio laborum eaque perferendis doloribus excepturi ad accusantium. Explicabo sint dolore
+                    repellendus cum ratione facilis earum corporis nobis perspiciatis molestiae dicta vel ipsum, nulla
+                    quibusdam obcaecati consectetur magnam veniam dolor distinctio omnis rerum excepturi deleniti. Cum
+                    cumque iure totam facere accusantium quidem! Commodi, asperiores esse! Recusandae explicabo
+                    laboriosam minima aspernatur in provident! Cum nisi dolorem eveniet qui totam, culpa iure similique
+                    accusamus commodi voluptatibus. Laborum doloremque ipsum sed modi placeat doloribus? Cum aliquid
+                    eaque suscipit pariatur, nesciunt quidem, praesentium dignissimos laboriosam consectetur voluptas
+                    provident perspiciatis officia! Ea aspernatur sunt deserunt neque mollitia. Sint corporis
+                    repellendus saepe sit expedita ipsa cum voluptates doloribus ipsum? In omnis nihil minus nam nostrum
+                    vitae officiis deserunt eum iste, magni rem a distinctio quos praesentium, harum cum quas cupiditate
+                    quisquam voluptas aliquam repudiandae totam voluptatum qui? Iure quo consequuntur voluptate,
+                    recusandae illum beatae rem necessitatibus adipisci error illo? Tenetur perspiciatis ea qui odio,
+                    inventore similique dicta maiores neque et, commodi, ipsa deserunt! Corporis blanditiis quae sit et
+                    laudantium expedita nemo maxime eaque, accusantium amet optio perspiciatis dolores obcaecati
+                    sapiente corrupti voluptatum, aut minus magni quas quidem alias nulla? Fugit odio ullam voluptate
+                    iure non! Quo voluptatem ab similique, ipsa, debitis deleniti beatae soluta ipsum ut repellendus
+                    expedita optio? Libero provident id quos possimus laborum error commodi, pariatur laboriosam nobis!
+                    Nobis deleniti culpa enim animi, pariatur quis, deserunt fugit minima rem nam dolor omnis error,
+                    quod dolores sed! Nobis a illum dolorum minus voluptas saepe quam ea quasi deserunt temporibus. Eum
+                    unde alias mollitia earum tempore ad atque cumque, corrupti ipsa aliquid nostrum cupiditate vel
+                    explicabo eius corporis libero quam modi. Porro impedit numquam earum, maxime magni iusto molestias
+                    ad, ullam sunt illo labore illum est voluptatem eligendi expedita neque rerum soluta libero aliquid
+                    laboriosam, incidunt praesentium. Quam ducimus natus id, amet ex tenetur dolor eveniet error sed
+                    iusto nemo eos velit nesciunt cupiditate explicabo sunt, ipsam architecto dolorum quas soluta illo
+                    quod excepturi mollitia? Accusantium, incidunt. Vel corrupti maxime ipsa saepe, optio reprehenderit,
+                    quos quod culpa excepturi dolor eos nam. Aliquid, dolores tempore minus eligendi, quod sunt, illo ad
+                    doloribus odio eveniet numquam fugit dolore ducimus necessitatibus neque? Nulla dolore delectus iure
+                    reiciendis dolor numquam? Delectus explicabo perspiciatis eaque dolores atque dolorum! Non quia
+                    aperiam eaque ex, soluta voluptate fugiat culpa dignissimos laboriosam sed esse natus adipisci
+                    tempora beatae provident excepturi, in repellat recusandae, quam sequi.</p>
             </div>
+
+            <video src="./images/flower.mp4" autoplay muted></video>
 
         </section>
         <section id="contact">
@@ -180,6 +371,13 @@
     </main>
     <footer></footer>
 
+    <!-- 先載入jQuery原始碼 讓瀏覽器看懂 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- 換圖輪播js 因為是用jQuery寫 所以要放在jQ下面 -->
+    =
+    <script src="./carousel.js"></script>
 </body>
+
+
 
 </html>

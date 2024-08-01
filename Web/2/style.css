@@ -27,11 +27,13 @@
     --lesser-2: #efdbdb;
     --lesser-3: #cdaaab;
     --lesser-4: #8f6b6d;
+    --lesser-5: #714e4f;
 
     /* 透明度 */
-    --alpha-w-60: rgba(255, 255, 255, .8);
+    --alpha-w-80: rgba(255, 255, 255, .8);
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, .4);
+    --alpha-r-70: rgb(143, 107, 109,.5);
 
     /* 漸層 */
     --gradient-w-a: rgba(255, 255, 255, 0.15);
@@ -40,7 +42,34 @@
     /* 陰影 */
 }
 
+/* 卷軸樣式 */
+/* 設定外觀形狀要從爸爸那邊p */
+/* 卷軸基底 */
+::-webkit-scrollbar {
+    width: 20px;
+}
 
+/* 卷軸上下塊狀 */
+::-webkit-scrollbar-button {
+    background-color: #444;
+}
+
+/* 卷軸軌道 */
+::-webkit-scrollbar-track {
+    background-color: var(--lesser-1);
+}
+
+/* 卷軸移軸本身 */
+::-webkit-scrollbar-thumb {
+    background-color: var(--lesser-4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--lesser-5);
+}
+
+/* 多行文字右下角的縮放按鈕 */
+::-webkit-resizer {}
 
 /* 重置所有標籤的樣式 */
 * {
@@ -302,6 +331,7 @@ section {
 #news {
     background-color: var(--lesser-2);
 }
+
 #news .content {
     background-color: var(--alpha-b-20);
     transition: .4s;
@@ -330,7 +360,7 @@ section {
 }
 
 #service .content:hover {
-background-color: var(--lesser-4);
+    background-color: var(--lesser-4);
 }
 
 #service p {
@@ -378,30 +408,59 @@ background-color: var(--lesser-4);
 #video {
     background-color: var(--grey);
 }
+
 .video {
     width: 60%;
     max-width: 1050px;
 }
+
 video {
     width: 100%;
 }
 
+#about {
+    position: relative;
+}
+
+#about video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 /* 關於我們區 */
 #about .content {
+    position: absolute;
+    z-index: 888; /* 設定順序 沒設定的話會被影片蓋住 */
     width: 65%;
     height: 100vh;
-    background-color: var(--lesser-3);
+    background-color: var(--alpha-r-70);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px); /* 只有content裡要模糊 就設定這邊 */
 }
 
 #about p {
     width: 90%;
     height: 65vh;
-    overflow: auto;
+    padding: 0 5% 0 0;
+    overflow: auto; /* 最建議使用auto */
 }
+
+#about p::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+}
+
+#about p::-webkit-scrollbar-track {
+    border-radius: 99px;
+}
+
+#about p::-webkit-scrollbar-button {
+    display: none;
+}
+
 /* 聯絡我們區 */
 #contact {
     /* 專門為absolute的定位依據 */
