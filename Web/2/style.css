@@ -33,7 +33,7 @@
     --alpha-w-80: rgba(255, 255, 255, .8);
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, .4);
-    --alpha-r-70: rgb(143, 107, 109,.5);
+    --alpha-r-70: rgb(143, 107, 109, .5);
 
     /* 漸層 */
     --gradient-w-a: rgba(255, 255, 255, 0.15);
@@ -422,7 +422,7 @@ video {
     position: relative;
 }
 
-#about video{
+#about video {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -431,7 +431,8 @@ video {
 /* 關於我們區 */
 #about .content {
     position: absolute;
-    z-index: 888; /* 設定順序 沒設定的話會被影片蓋住 */
+    z-index: 888;
+    /* 設定順序 沒設定的話會被影片蓋住 */
     width: 65%;
     height: 100vh;
     background-color: var(--alpha-r-70);
@@ -439,14 +440,16 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(5px); /* 只有content裡要模糊 就設定這邊 */
+    backdrop-filter: blur(5px);
+    /* 只有content裡要模糊 就設定這邊 */
 }
 
 #about p {
     width: 90%;
     height: 65vh;
     padding: 0 5% 0 0;
-    overflow: auto; /* 最建議使用auto */
+    overflow: auto;
+    /* 最建議使用auto */
 }
 
 #about p::-webkit-scrollbar-thumb {
@@ -650,3 +653,40 @@ video {
         ;
     }
 }
+
+/* 頁尾區 */
+footer {
+    padding: 20px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .navigation .menu {
+    margin: 0;
+    padding: 0;
+}
+
+footer .navigation .menu li {
+    border: none;
+    margin: 10px 0;
+}
+
+/* 中型設備(ipad air) */
+@media(max-width:820px) {
+    footer {
+        text-align: center;
+    }
+
+    footer div {
+        display: none;
+    }
+}
+
+/* 中型設備(ipad air) */
+@media(max-width:820px) {}
+
+/* 小型設備(ipad air) */
+@media(max-width:640px) {}
