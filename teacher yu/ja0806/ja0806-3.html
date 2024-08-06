@@ -1,0 +1,60 @@
+1
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 事件基本語法 -->
+    <!-- <div 事件名稱="程式碼">標籤內容</div> -->
+    <!-- <button 事件名稱="程式碼">按鈕內容</button> -->
+    <div onclick="changeP1();">按一下變更內容</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos excepturi eius culpa, sit sint maxime sunt quas libero maiores.
+        Esse dolore velit deserunt nobis. Minus quibusdam alias labore culpa voluptas!</p>
+
+    <h2 onclick="changeP2();">標題2</h2>
+    <p id="p2" class="p2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ipsum ipsa suscipit dolorem aliquid optio cupiditate commodi
+        ab veniam explicabo perspiciatis quae omnis nemo quam! Odit ducimus possimus cupiditate aliquam?</p>
+
+    <script>
+        // 更改第一個段落
+        function changeP1() {
+
+            // 變更網頁body的內容
+            // document.body.innerHTML='Hello';
+
+            // 變更段落內容
+            // document.querySelector('p').innerHTML
+
+            /* queryslector只取得第一個段落 */
+            // console.log(document.querySelector('p'));
+
+            /* queryslectorAll取得所有段落 */
+            // console.log(document.querySelectorAll('p'));
+
+            /* getElementsByTagName取得所有段落 */
+            // console.log(document.getElementsByTagName('p'));
+
+            // 產生集合陣列物件
+            // document.getElementsByTagName('p')[0].innerHTML='Hello';
+        }
+
+        function changeP2(){
+
+            // 取得第二個段落
+            // document.getElementsByTagName('p')[1].innerHTML='第二個段落被我更改了';
+
+            // 取得id改變段落內容
+            // document.getElementById('p2').innerHTML='取得id改變段落內容';
+
+            // document.getElementsByClassName('p2')[0].innerHTML='取得class改變段落內容';
+            document.querySelector('.p2').innerHTML='取得class改變段落內容';
+        }
+    </script>
+</body>
+
+</html>
