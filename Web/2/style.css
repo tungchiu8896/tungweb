@@ -144,6 +144,21 @@ p {
     color: var(--light);
 }
 
+#gotop{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+
+    width:50px;
+    height: 50px;
+    background-color: var(--lesser-4);
+    border-radius: 50%;
+    padding: 5px;
+    
+    cursor: pointer; /* 游標樣式:手指 */
+}
+
 #form--contact input,
 #form--contact textarea,
 #topbar .menu,
@@ -689,4 +704,89 @@ footer .navigation .menu li {
 @media(max-width:820px) {}
 
 /* 小型設備(ipad air) */
-@media(max-width:640px) {}
+@media(max-width:640px) {
+
+    #topbar {
+        align-items: flex-start;
+    }
+
+    .hamburger .bar .hamburger.is-active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(11px);
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-11px);
+    }
+
+    #topbar .menu {
+        flex-direction: column;
+        order: -1;
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
+    }
+
+    .navigation {
+        align-items: center;
+        padding: 10px;
+        border-radius: 15px;
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient (15deg, var(--alpha-b-20), var(--alpha-b-40));
+        backdrop-filter: blur(5px);
+        background-color: transparent;
+        box-shadow: var(--alpha-b-40);
+        /* 動畫效果 */
+        animation: hide .35s both;
+    }
+
+    .navigation.show {
+        display: flex;
+        /* 動畫效果 */
+        animation: show .35s both;
+    }
+
+    @keyframes hide {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .navigation .menu {
+        display: flex;
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 30px;
+        /* 控制複層的外距 */
+    }
+
+    .navigation .menu li {
+        border: none;
+    }
+
+    .navigation .menu a {
+        font-size: .9rem;
+        line-height: 1;
+        margin: 0 20px;
+        border-bottom: solid 2px transparent;
+    }
+
+}

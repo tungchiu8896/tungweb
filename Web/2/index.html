@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style.css">
     <!-- 換圖輪播css -->
     <link rel="stylesheet" href="./carousel.css">
+    <link rel="stylesheet" href="./script.js">
 
 </head>
 
@@ -20,9 +21,16 @@
         <h1 class="logo">
             <a href="./index.html"><img src="./images/logo_b.svg" alt="flowerlogo"></a>
         </h1>
+<div class="navigation">
+    <!-- 漢堡選單按鈕 -->
+    <button class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
         <!-- 選單列 -->
-        <nav class="navigation">
+        <nav>
             <!-- ICON btn -->
             <ul class="icon">
                 <li><a class="icon-fb" href="#"></a></li>
@@ -32,14 +40,15 @@
             </ul>
             <!-- main btn 縮寫(ul.menu>li*6>a) -->
             <ul class="menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#banner">HOME</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#service">SERVICE</a></li>
+                <li><a href="#video">VIDEO</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
+    </div>
     </header>
     <main>
         <!-- 換圖輪播 -->
@@ -406,6 +415,7 @@
             </ul>
         </nav>
         <small>copyright &copy;瑞塔花室</small>
+        <div id="gotop"><img src="./images/arrow-up.svg" alt=""></div>
     </footer>
 
     <!-- 先載入jQuery原始碼 讓瀏覽器看懂 -->
