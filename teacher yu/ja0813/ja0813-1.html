@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑鼠移入移出 字體變色</title>
+    <style>
+        /* 有互動先建立好，沒互動直接寫死就可以 */
+        p{
+            font-size: 24px;
+            color: black;
+        }
+        .hot{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .restoreHot{
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 使用style屬性動態改文字色彩 -->
+    <p id="msg" onmouseover="changeColor();" onmouseout="restore();">Hello</p>
+    <script>
+        // 滑鼠碰到時變色
+        function changeColor() {
+            // 取得變色的目標
+            let msg = document.getElementById('msg');
+            // 前景色
+            msg.style.color='red';
+            // 背景色
+            msg.style.backgroundColor='#000'
+            // 套用css預先做好的類別樣式
+            msg.className='hot';
+        }
+
+        function restore(){
+            let msg=document.getElementById('msg');
+            // 前景色取消 => 回到沒有變色狀態
+            msg.style.color='#000';
+            // 背景色取消 => 回到沒有變色狀態
+            msg.style.backgroundColor='#fff'
+            // 套用css預先做好的類別樣式
+            msg.className='restoreHot'
+        }
+    </script>
+</body>
+
+</html>

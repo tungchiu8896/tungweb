@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 600px;
+            margin: 0 auto;
+        }
+        #picL {
+            width: 400px;
+            height: 400px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .picS {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .picS img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 縮圖換大圖 -->
+    <div class="wrap">
+        <!-- 大圖 -->
+        <div>
+            <img id="picL" src="../image/icon-search-small-11.png" alt="">
+        </div>
+        <!-- 縮圖 -->
+        <div class="picS">
+            <!-- 這個方法可以，但較難維護 -->
+            <!-- <img onclick="swap('../image/icon-search.png')" id="pic1" src="../image/icon-search.png" alt="">
+            <img onclick="swap('../image/icon-search.png')" id="pic2" src="../image/icon-search.png" alt="">
+            <img onclick="swap('../image/icon-search.png')" id="pic3" src="../image/icon-search.png" alt=""> -->
+
+            <!-- 這個方法更好，較好維護 -->
+            <img onclick="swap(this.src);" src="../image/icon-search.png" alt="">
+            <img onclick="swap(this.src);" src="../image/icon-search-small-11.png" alt="">
+            <img onclick="swap(this.src);" src="../image/icon-search.png" alt="">
+        </div>
+
+        <script>
+            function swap(picSrc) {
+                let picL = document.getElementById('picL');
+                picL.src = picSrc;
+            }
+
+            // let picL = document.getElementById('picL');
+
+            // function changePic1() {
+            //     let pic1 = document.getElementById('pic1');
+            //     picL.src = '../image/icon-search-small-11.png';
+            // }
+
+            // function changePic2() {
+            //     let pic2 = document.getElementById('pic2');
+            //     pic2.src = '../image/icon-search-small-11.png';
+            // }
+
+            // function changePic3() {
+            //     let pic3 = document.getElementById('pic3');
+            //     pic3.src = '../image/icon-search-small-11.png';
+            // }
+
+            // function restorePic1() {
+            //     let pic1 = document.getElementById('pic1');
+            //     pic1.src = '../image/icon-search.png';
+            // }
+
+            // function restorePic2() {
+            //     let pic2 = document.getElementById('pic2');
+            //     pic2.src = '../image/icon-search.png';
+            // }
+
+            // function restorePic3() {
+            //     let pic3 = document.getElementById('pic3');
+            //     pic3.src = '../image/icon-search.png';
+            // }
+
+        </script>
+</body>
+
+</html>

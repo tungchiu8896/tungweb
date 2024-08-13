@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover效果</title>
+
+    <style>
+        .wrap {
+            margin: 100px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 換圖效果 -->
+    <div class="wrap">
+
+        <div>
+            <img onmouseover="changePic()" onmouseout="restorePic()" id="pic" src="../image/icon-search-small-11.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        
+        function changePic() {
+            // 取得換圖的目標
+            let pic = document.getElementById('pic');
+            // 換圖
+            pic.src = '../image/icon-search.png';
+        }
+
+        function restorePic() {
+            // 取得換圖的目標
+            let pic = document.getElementById('pic');
+            // 滑鼠移變回來
+            pic.src = '../image/icon-search-small-11.png';
+        }
+    </script>
+</body>
+
+</html>
