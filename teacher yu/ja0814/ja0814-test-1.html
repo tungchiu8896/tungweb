@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 下拉選單，並連結到其他網站 -->
+
+<body>
+    <form>
+        <label for="URL">你要前往何處</label>
+        <!-- onchange開啟新視窗 -->
+        <select onchange="window.open(this.options[this.selectedIndex].value)" name="" id="">
+            <option value="">請選擇</option>
+            <option value="https://www.google.com">goole</option>
+            <option value="https://www.notion.so/">my notion</option>
+            <option value="https://www.pinterest.com/">pinterest</option>
+        </select>
+        <input type="button" value="送出" id="btn">
+    </form>
+
+    <script>
+        // 取得下拉方塊
+        let url = document.getElementById('URL');
+        // 監聽change事件
+        url.addEventListener('change', function () {
+            // 取得下拉選單中的值
+            // 跳轉到指定的網址
+            location.href = url.value;
+        });
+    </script>
+
+</body>
+
+</html>
