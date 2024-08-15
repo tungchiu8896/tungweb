@@ -19,4 +19,23 @@ $(function () {
     let pos = $(btn).offset();
     $("html,body").animate({ scrollTop: pos.top }, 1000);
   });
+
+  // 滑動至頂
+  $("#gotop").click(function () {
+    $("html,body").animate({ scrollTop: 0 }, 1000);
+  });
+
+  // 置頂按鈕淡入淡出
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $("#gotop").stop().fadeTo('fast',1);
+    } else {
+      $("#gotop").stop().fadeOut('fast');
+    }
+  });
+});
+
+// jQuery Smoove
+$('.smoove').smoove({
+  offset:'20%'
 });

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./style.css">
     <!-- 換圖輪播css -->
     <link rel="stylesheet" href="./carousel.css">
-    <link rel="stylesheet" href="./script.js">
 
 </head>
 
@@ -21,34 +20,35 @@
         <h1 class="logo">
             <a href="./index.html"><img src="./images/logo_b.svg" alt="flowerlogo"></a>
         </h1>
-<div class="navigation">
-    <!-- 漢堡選單按鈕 -->
-    <button class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
 
-        <!-- 選單列 -->
-        <nav>
-            <!-- ICON btn -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-                <li><a class="login" herf="./login.html">Login</a></li>
-            </ul>
-            <!-- main btn 縮寫(ul.menu>li*6>a) -->
-            <ul class="menu">
-                <li><a href="#banner">HOME</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#service">SERVICE</a></li>
-                <li><a href="#video">VIDEO</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </div>
+        <div class="navigation">
+            <!-- 漢堡選單按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- 選單列 -->
+            <nav>
+                <!-- ICON btn -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="login" herf="./login.html">Login</a></li>
+                </ul>
+                <!-- main btn 縮寫(ul.menu>li*6>a) -->
+                <ul class="menu">
+                    <li><a href="#banner">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <!-- 換圖輪播 -->
@@ -156,14 +156,15 @@
                 </nav>
             </div>
         </section>
+
         <!-- 最新消息 -->
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <div class="box__list">
-                <article class="item">
+                <article class="item smoove" data-move-x="-40%" data-rotate="90deg">
                     <!-- a>(figure>img)+div.content>h1+p -->
                     <a href="#">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
@@ -175,7 +176,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-60%" data-rotate="45deg" data-move-y="100px ">
                     <a href="#">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="content">
@@ -186,7 +187,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="120%" data-rotate="-90deg">
                     <a href="#">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="content">
@@ -199,6 +200,7 @@
                 </article>
             </div>
         </section>
+
         <!-- 服務項目 -->
         <section id="service">
             <header class="title">
@@ -207,7 +209,7 @@
             </header>
             <!-- ul.box__list>li.item*4>a[href="#"]>h1{SERVICE TITLE}+p -->
             <ul class="box__list">
-                <li class="item svc-1">
+                <li class="item svc-1 smoove" data-move-x="-200px" data-move-y="100px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem veritatis illum
@@ -215,7 +217,7 @@
                             soluta magnam at ut nostrum? Consectetur, corporis natus.</p>
                     </a>
                 </li>
-                <li class="item svc-2">
+                <li class="item svc-2 smoove" data-move-x="-100px" data-move-y="100px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod unde debitis possimus sapiente,
@@ -223,7 +225,7 @@
                             voluptas provident voluptatum, numquam repellat quibusdam.</p>
                     </a>
                 </li>
-                <li class="item svc-3">
+                <li class="item svc-3 smoove" data-move-x="100px" data-move-y="100px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fugiat repudiandae recusandae
@@ -231,7 +233,7 @@
                             libero eveniet reprehenderit eligendi.</p>
                     </a>
                 </li>
-                <li class="item svc-4">
+                <li class="item svc-4 smoove" data-move-x="200px" data-move-y="100px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem totam sed a non neque
@@ -241,6 +243,7 @@
                 </li>
             </ul>
         </section>
+
         <!-- 影片 -->
         <section id="video">
             <header class="title">
@@ -250,14 +253,16 @@
             <!-- 影片容器 -->
             <div class="video">
                 <!-- 影片本人 -->
-                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls></video>
+                <video class="smoove" src="./images/Planter.mp4" poster="./images/cover.jpg" controls
+                    data-move-x="-150%" data-rotate-y="-90deg"></video>
                 <!-- 瀏覽器設定autoplay必須搭配muted才能使用 -->
             </div>
         </section>
+
         <!-- 關於我們 -->
         <section id="about">
-
-            <div class="content">
+            <!-- 內容區 -->
+            <div class="content smoove" data-move-z="-500px" data-rotate-x="90deg" data-move-y="150px">
 
                 <header class="title">
                     <h2>ABOUT</h2>
@@ -345,14 +350,16 @@
             </div>
 
             <video src="./images/flower.mp4" autoplay muted></video>
-
         </section>
+
+        <!-- 聯絡我們 -->
         <section id="contact">
-            <header class="title">
+            <header class="title smoove">
                 <h2>CONTACT US</h2>
                 <h3>聯絡我們</h3>
             </header>
-            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
+            <form class="smoove" data-move-x="150%" data-rotate-y="90deg action="" method=" post" name="form--contact"
+                id="form--contact" title="聯絡我們表單">
                 <label for="">*姓名:</label>
                 <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
                     autofocus>
@@ -377,6 +384,7 @@
             <div class="flower_r"><img src="./images/flower_r.png" alt="紅花"></div>
             <div class="flower_w"><img src="./images/flower_w.png" alt="白花"></div>
         </section>
+
     </main>
     <footer>
         <!-- logo -->
@@ -386,11 +394,11 @@
                 <li><a href="#">HOME</a></li>
                 <li>
                     <a href="#">NEWS</a>
-                <ul>
-                    <li><a href="#">媒體報導</a></li>
-                    <li><a href="#">活動訊息</a></li>
-                </ul>
-            </li>
+                    <ul>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">活動訊息</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">SERVICE</a>
                     <ul>
                         <li><a href="#">服務1</a></li>
@@ -421,8 +429,11 @@
     <!-- 先載入jQuery原始碼 讓瀏覽器看懂 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- 換圖輪播js 因為是用jQuery寫 所以要放在jQ下面 -->
-    =
     <script src="./carousel.js"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+    <link rel="stylesheet" href="./script.js">
 </body>
 
 
