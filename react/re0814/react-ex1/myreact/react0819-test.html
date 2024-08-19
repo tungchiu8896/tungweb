@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elle</title>
+    <script src="../javascripts/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+
+
+        #box {
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-small{
+            width: 100%;
+        }
+
+        h1{
+            margin: 10px;
+        }
+
+        .point{
+            display: flex;
+            align-items: flex-start;
+        }
+
+        section{
+display: flex;
+
+        }
+
+        .background-image-container{
+            
+            height: 600px;
+            width: 600px;
+            margin: 10px;
+            img {
+            
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        }
+
+        .box-content{
+            width: 500px;
+        }
+
+        p{
+            margin: 10px;
+            text-align: justify;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function App() {
+            const data = {
+                title1: '認識美國甜心Sabrina Carpenter！出道10年才憑〈Espresso〉爆紅，解構身高151美式辣妹風穿搭',
+                title2: 'Sabrina Carpenter新專輯即將推出！',
+                title3: 'Sabrina Carpenter小百科',
+                title4: '2013年以迪士尼童星身分踏入演藝圈',
+                content1: 'Sabrina Carpenter莎賓娜卡本特即將在8月23日推出新專輯《Short n Sweet》！在2024年憑藉夏季洗腦神曲〈Expresso〉席捲全世界的Sabrina Carpenter，除了能歌能舞能演外，還是位很會穿搭的時髦精，不受限於151公分的身高，反倒藉由這個可愛特點，帶起了一股超短版辣妹穿搭風潮！以下就讓我們來認識這位出道10年後才爆紅的「美國甜心」,並一起解構她那充滿復古少女元素的造型風格。',
+                content2: '憑藉〈Expresso〉登上頂流的Sabrina Carpenter，即將在8月底推出第六張專輯《Short n Sweet》，並開啟歐美兩地的巡迴演唱會！但其實這位看似一炮而紅的歌手，早在10年前便開始默默耕耘演藝事業，並在推出第五張專輯後才迎來轉型蛻變，成為如今我們看到的「美國甜心」。',
+                content3: '暱稱：美國甜心、Sabby 出生地： 美國賓夕法尼亞州 生日：1999年5月11日 身高：151公分 唱片公司：小島唱片公司（母公司為環球唱片） 影視代表作品：《蕾蕾看世界》（2014 - 2017年）、《女孩我最高》（2019年）、《飆舞追夢》（2020年） 專輯代表作品：《Singular: Act I》（2018年）、《Emails I Cant Send》（2022年）、《Short n Sweet》（2024年）',
+                content4: 'abrina Carpenter成長於一個人口不超過1萬人的賓州小鎮，10歲時，便開始自錄翻唱影片PO上YouTube，她爸爸還為此在家中蓋了一間小小錄音室，來支持女兒的歌手夢想。2011年，12歲的Sabrina Carpenter先一腳跨進了影劇圈，在一些小型的戲劇節目中跑龍套，直到2013年，她才拿下迪士尼影劇《蕾蕾看世界》的女配角一職，在這部拍攝長達3年的情境喜劇中，以迪士尼童星身分映入許多少男少女心中。',
+                imgUrl1: 'https://hips.hearstapps.com/hmg-prod/images/111-2-66c2c8a75823f.png?crop=0.493xw:0.984xh;0,0.0163xh&resize=980:*',
+                imgUrl2: 'https://www.youtube.com/embed/eVli-tstM5E?si=ZsvJmJQJOTJudBgp',
+                imgUrl3: 'https://hips.hearstapps.com/hmg-prod/images/sabrinacarpenter-1723438605-3432774287520835916-8713286-66c1ec743fcd9.jpg?crop=1xw:1xh;center,top&resize=980:*',
+                imgUrl4: 'https://hips.hearstapps.com/hmg-prod/images/girl-meets-high-school-part-one-riley-maya-lucas-and-farkle-news-photo-1723984780.jpg?crop=0.534xw:1.00xh;0.246xw,0&resize=980:*',
+            }
+            return <>
+            <div id='box'>
+                <div className='box-small'>
+                    <h1 className='box-small-title'>{data.title1}</h1>
+                    <section className='point'>
+                    <div className="background-image-container">
+                    <img src={data.imgUrl1} alt="" />
+                </div>
+                <div className='box-content'>
+                    <p>{data.content1}</p>
+                </div>
+            </section>
+                </div>
+
+                <div className='box-small'>
+                    <h2 className='box-title'>{data.title2}</h2>
+                    <div className='video'><iframe src={data.imgUrl2} style={{ width: '560px', height: '315px' }}></iframe></div>
+                    <div className='box-content'>
+                    <p>{data.content2}</p>
+                </div>
+                </div>
+
+                <div className='box-small'>
+                    <h1 className='box-title'>{data.title3}</h1>
+                    <section className='point'>
+                    <div className="background-image-container">
+                    <img src={data.imgUrl3} alt="" />
+                </div>
+                <div className='box-content'>
+                    <p>{data.content3}</p>
+                </div>
+            </section>
+                </div>
+
+                
+                <div className='box-small'>
+                    <h1 className='box-title'>{data.title4}</h1>
+                    <section className='point'>
+                    <div className="background-image-container">
+                    <img src={data.imgUrl4} alt="" />
+                    </div>
+                    <div className='box-content'>
+                    <p>{data.content4}</p>
+                </div>
+            </section>
+                </div>
+            </div>
+
+            </>
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+    </script>
+
+
+</body>
+
+</html>
