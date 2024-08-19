@@ -33,7 +33,7 @@
             // 建立資料物件
             const data = {
               imgUrl: 'https://plus.unsplash.com/premium_photo-1677545182067-26ac518ef64f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNhdHxlbnwwfHwwfHx8MA%3D%3D',
-              title: 'Card-title',
+              title: '口愛虎斑mimi',
               content: "Some quick example text to build on the card title and make up the bulk of the card's content.",
               btnLink: 'https://plus.unsplash.com/premium_photo-1677545182067-26ac518ef64f?q=80&w=956&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="btn btn-primary',
               btnTitle: 'Go somewhere',
@@ -44,9 +44,9 @@
               <div className="card">
                 <img src={data.imgUrl} class="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="">Go somewhere</a>
+                  <h5 className="card-title">{data.title}</h5>
+                  <p className="card-text">{data.content}</p>
+                  <a href={data.btnLink} className="btn btn-primary">{data.btnTitle}</a>
                 </div>
               </div>
             </>
