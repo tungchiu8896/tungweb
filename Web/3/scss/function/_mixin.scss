@@ -1,0 +1,20 @@
+@use '../variables/' as *;
+
+// 重複使用的，可以整理成mixin
+
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bordered-1 ($width: 1px, $color: map-get($color, dark)) {
+    border: $width solid $color;
+}
+
+@mixin multiple-ellipsis {
+    overflow: hidden;
+text-overflow: ellipsis;
+}

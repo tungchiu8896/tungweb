@@ -1,0 +1,87 @@
+@use './variables/' as *;
+@use './function/' as *;
+
+/*共用區*/
+
+// .title::after {
+//     content: '';
+//     display: block;
+//     background-color: map-get($color, dark);
+//     width: 100%;
+//     height: 3px;
+// }
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.title {
+    position: relative;
+    @include bordered-1;
+    padding-left: 1rem;
+    margin: 85px 0 35px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 5px; //定位邀相對於文字字級可用rem單位
+        bottom: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: map-get($color, dark);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 11rem; //定位邀相對於文字字級可用rem單位
+            bottom: 0;
+            background-color: map-get($color, dark);
+            width: calc(100%-11rem);
+            height: 3px;
+        }
+    }
+
+    h3 {
+        line-height: 1; // bs預設h3行高為1.2，我改為1
+
+        span {
+            font: {
+                size: 1rem;
+            }
+
+            ;
+        }
+    }
+}
+
+.mask {
+    mask-image: url(../套件/mask.svg)
+    mask-size:
+}
+
+/*最新商品*/
+#new {
+    a {
+        position: relative;
+        color: map-get($color, light);
+
+        &:hover {
+            h2 {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: map-get($color, alpha-b-60);
+        }
+    }
+}
