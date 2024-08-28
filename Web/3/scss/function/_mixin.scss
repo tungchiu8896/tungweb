@@ -1,4 +1,4 @@
-@use '../variables/' as *;
+@use '../variables' as *;
 
 // 重複使用的，可以整理成mixin
 
@@ -10,8 +10,8 @@
     align-items: center;
 }
 
-@mixin bordered-1 ($width: 1px, $color: map-get($color, dark)) {
-    border: $width solid $color;
+@mixin bordered-l ($width: 1px, $color: map-get($color, dark)) {
+    border-left: $width solid $color;
 }
 
 @mixin multiple-ellipsis {

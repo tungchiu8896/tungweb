@@ -1,5 +1,5 @@
-@use './variables/' as *;
-@use './function/' as *;
+@use './variables' as *;
+@use './function' as *;
 
 /*共用區*/
 
@@ -18,7 +18,7 @@ img {
 
 .title {
     position: relative;
-    @include bordered-1;
+    @include bordered-l;
     padding-left: 1rem;
     margin: 85px 0 35px;
 
@@ -56,10 +56,47 @@ img {
     }
 }
 
-.mask {
-    mask-image: url(../套件/mask.svg)
-    mask-size:
+// 傾斜遮色片
+.mask-tilt {
+    mask-image: url(../image/mask.svg);
+mask-size: 93% 100%;
+mask-position: center;
+mask-repeat: no-repeat;
+
+// scss RWD
+@media ($media-md) {
+    mask-size: 90% 100%;
 }
+@media ($media-lg) {
+    mask-size: 92% 100%;
+}
+}
+
+.mask {
+mask-size: 100% 100%;
+mask-position: center;
+mask-repeat: no-repeat;
+
+@media ($media-md) {
+    mask-size: 90% 100%;
+}
+@media ($media-lg) {
+    mask-size: 92% 100%;
+}
+}
+
+.blobs-1{
+    mask-image: url(../image/blobs-1.svg);
+}
+
+.blobs-2{
+    mask-image: url(../image/blobs-2.svg);
+}
+
+.blobs-3{
+    mask-image: url(../image/blobs-3.svg);
+}
+
 
 /*最新商品*/
 #new {

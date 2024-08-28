@@ -1,0 +1,10 @@
+// 響應式斷點
+$media-sm: 'max-width:640px';
+$media-md: 'min-width:768px';
+$media-lg: 'max-width:992px';
+
+$interval: (
+    s:5px,
+    m:10px,
+    l:15px
+    )
