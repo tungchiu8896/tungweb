@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        #wrapper {
+            width: 960px;
+            margin: 50px auto;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+.ttpShow {
+    display: block;
+}
+        .ttpPanel {
+            border: 3px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            background-color: #ccc;
+            position: absolute;
+            z-index: 99;
+            display: none;
+        }
+    </style>
+
+
+    <!-- 步驟1:載入React, Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+
+        function App() {
+            useEffect(() => {
+                // 撰寫jQuery
+                $(function () {
+                
+                    // 滑鼠事件
+                    // 移入=>mouseover()
+                    // 移動=>mousemove()
+                    // 移出=>mouseout()
+
+                    // 座標X => pageX
+                    // 座標Y => pageY
+
+                    // 淡入=>fadeIn()
+                    // 淡出=>fadeOut()
+                    // 速度=>可以使用秒數或者參數(slow, normal, fast)
+                    // 傳回被找到的資訊=>has()
+
+                    $('a:has(.ttpShow)').mouseover(function(e){
+                        // 滑鼠碰到超連結時
+                        $('body').append('<div id="ttpPanel">'+$(this).children('.ttpShow').html()+'</div>');
+                        $('ttpPanel').css({ top:(e.pageY)+'px',left:(e.pgeX)+'px'})
+                        }).fadeIn('fast');
+                    });
+
+                    $('a:has(.ttpShow)').mousemove(function(e){
+                        // 滑鼠在超連結移動時
+                        $('.ttpShow').css({
+                            top:(e.pageY)+'px',
+                            left:(e.pageX)+'px'
+                        }).fadeIn('fast');
+                    });
+
+                    $('a:has(.ttpShow)').mouseout(function(e){
+                        // 滑鼠離開超連時
+                        $('.ttpShow').fadeIn('fast');
+                    });
+                });
+            }, []);
+
+            return (
+                <div id="wrapper">
+                    <h1>toolTip效果-使用滑鼠方法</h1>
+                    <p>Lorem ipsum dolor sit amet, <a href="#">consectetur<span className="ttpShow">adipisicing</span></a> Quaerat eligendi, magnam ab non corrupti velit odio libero error sint voluptatem illum expedita ipsam molestias nulla numquam veritatis nemo unde voluptates?</p>
+                    
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+    <!-- jQuery主程式 -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+
+</body>
+
+</html>
