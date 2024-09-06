@@ -1,5 +1,23 @@
 @charset "UTF-8";
 /*共用區*/
+.carousel img {
+  object-fit: cover;
+  height: 100%;
+}
+.carousel .carousel-item {
+  height: calc(100vh - 70px);
+}
+
+.navbar {
+  height: 70px;
+}
+.navbar img {
+  height: 50px;
+}
+.navbar .btn-search {
+  width: 5rem;
+}
+
 img {
   display: block;
   width: 100%;
@@ -127,6 +145,36 @@ img {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+#acc .title::after {
+  left: 15rem;
+  width: calc(100% - 15rem);
+}
+
+#tabs {
+  width: 80%;
+  margin: 0 auto;
+}
+#tabs .content {
+  padding: 25px;
+}
+#tabs .content > * {
+  margin-bottom: 1rem;
+}
+#tabs .content h2 {
+  display: block;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 5px 10px;
+  box-shadow: 5px 5px 0 rgb(216, 235, 47);
+}
+#tabs .content data {
+  display: block;
+}
+#tabs .content mark {
+  font-size: 1.5rem;
+  background-color: rgb(216, 235, 47);
+}
+
 .tabs-btn {
   display: flex;
 }
@@ -154,7 +202,8 @@ img {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
-a.ui-button:active, .ui-button:active,
+a.ui-button:active,
+.ui-button:active,
 .ui-button.ui-state-active:hover {
   border: 1px solid #444444;
   background: transparent;
@@ -162,4 +211,12 @@ a.ui-button:active, .ui-button:active,
 
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   padding: 0;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 25px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
 }/*# sourceMappingURL=style.css.map */

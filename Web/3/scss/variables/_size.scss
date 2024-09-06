@@ -3,8 +3,8 @@ $media-sm: 'max-width:640px';
 $media-md: 'min-width:768px';
 $media-lg: 'max-width:992px';
 
-$interval: (
-    s:5px,
-    m:10px,
-    l:15px
-    )
+$interval-s:5px;
+$interval-m:10px;
+$interval-l:15px;
+$interval-xl:20px;
+$interval-xxl:25px;

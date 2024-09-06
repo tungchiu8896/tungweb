@@ -2,7 +2,32 @@
 @use './function' as *;
 
 /*共用區*/
+// bs換圖輪播
+.carousel {
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
 
+    .carousel-item {
+        height: calc(100vh - 70px);
+    }
+}
+
+// 導覽列
+.navbar {
+    height: 70px;
+
+    img {
+        height: 50px;
+    }
+
+    .btn-search {
+        width: 5rem;
+    }
+}
+
+// 偽元素存在於內容區範圍
 // .title::after {
 //     content: '';
 //     display: block;
@@ -163,44 +188,94 @@ img {
 }
 
 // 推薦商品
+#acc {
+    .title {
+        &::after {
+            left: 15rem;
+            width: calc(100% - 15rem);
+        }
+    }
+}
+
+#tabs {
+    width: 80%;
+    margin: 0 auto;
+
+    .content {
+        padding: $interval-xxl;
+
+        >* {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            display: block;
+            color: map-get($color , light);
+            background-color: map-get($color, dark);
+            padding: $interval-s $interval-m;
+            box-shadow: $box-shadow-mark;
+        }
+
+        data {
+            display: block;
+        }
+
+        mark {
+            font-size: map-get($font-size, l);
+            background-color: map-get($color, mark);
+        }
+    }
+}
+
 .tabs-btn {
     display: flex;
 
-        li {
-            flex: 1;
-        }
+    li {
+        flex: 1;
     }
+}
 
-    // jquery ui tabs
+// jquery ui tabs
 
-    // 頁籤內容
-    .ui-tabs .ui-tabs-panel {
-        display: flex;
-        > div {
-            flex:1;
-        }
-    }
+// 頁籤內容
+.ui-tabs .ui-tabs-panel {
+    display: flex;
 
-    // 取消頁籤按鈕容器樣式
-    .ui-widget-header {
-        border: none;
-        background: transparent;
+    >div {
+        flex: 1;
     }
-    .ui-tabs .ui-tabs-nav li{
-        border-bottom-width:1px;
-        border-radius: 3px;
-    }
+}
 
-    // 修改active的樣式
-    .ui-state-active, 
-    .ui-widget-content .ui-state-active, 
-    .ui-widget-header .ui-state-active , 
-    a.ui-button:active, .ui-button:active, 
-    .ui-button.ui-state-active:hover{
-        border: 1px solid map-get($color ,deep );
-        background: transparent;
-    }
+// 取消頁籤按鈕容器樣式
+.ui-widget-header {
+    border: none;
+    background: transparent;
+}
 
-    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-        padding: 0;
-    }
+.ui-tabs .ui-tabs-nav li {
+    border-bottom-width: 1px;
+    border-radius: 3px;
+}
+
+// 修改active的樣式
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid map-get($color , deep);
+    background: transparent;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding: 0;
+}
+
+footer {
+    margin-top: $interval-xl;
+    padding: $interval-xxl;
+    text-align: center;
+    color: map-get($color, light);
+    background-color: map-get($color, dark);
+}
