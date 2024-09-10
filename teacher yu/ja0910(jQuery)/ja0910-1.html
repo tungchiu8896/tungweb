@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery圖片篩選</title>
+
+    <style>
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        #wrapper {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        #filterBtn {
+            padding-bottom: 30px;
+        }
+
+        #filterBtn a {
+            background-color: #257e22;
+            border: 1px solid #618b5d;
+            border-radius: 30px;
+            margin: 0 10px;
+            padding: 5px 30px;
+            transition: 0.5s;
+        }
+
+        #filterBtn a:hover {
+            background-color: #ddd;
+        }
+
+        #filterBtn a .active {
+            color: red;
+            font-weight: bold;
+            background-color: #fff;
+        }
+
+        /* 列表樣式 */
+        #filterList ul {
+            width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        #filterList ul li {
+            width: 150px;
+            float: left;
+            margin: 5px;
+        }
+
+        #filterList ul li img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+
+    <!-- 步驟1:載入React, Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect } = React;
+
+        function App() {
+            useEffect(() => {
+                $(function () {
+                    // 變數宣告
+                    // 按鈕區
+                    let setFilter = $('#filterBtn');
+                    // 按鈕中的超連結元素
+                    let filterBtn = setFilter.find('a');
+                    // 取得ALL按鈕
+                    let btnAll = $('.allItem');
+                    // 取得所有表中的元素區
+                    let setList = $('#filterList');
+                    // 取得列表中的li
+                    let filterList = setList.find('li');
+
+                    // 當任一個按鈕被左鍵一下時
+                    filterBtn.click(function () {
+                        // 檢查是否為被點選狀態，不是才執行
+                        if (!($(this).hasClass('active'))) {
+                            // 取出類別名稱給filterClass變數
+                            let filterClass = $(this).attr('class');
+                            // 使用each()方法，篩選列表中一樣的類別名稱
+                            filterList.each(function () {
+                                // 檢查li的類別名稱是否為被篩選的名稱
+                                if ($(this).hasClass(filterClass)) {
+                                    // 有找到
+                                    $(this).css({ display: 'block' });
+                                } else {
+                                    // 沒找到
+                                    $(this).css({ display: 'none' });
+                                }
+                            });
+                            // 清除所有按鈕上的active
+                            filterBtn.removeClass('active');
+                            // 將目前點選的超連結按鈕加上active類別
+                            $(this).addClass('active');
+                        }
+                    });
+
+                    // 全部顯示
+                    btnAll.click(function () {
+                        filterList.each(function () {
+                            $(this).css({ display: 'block' });
+                        })
+                    });
+                    btnAll.click();
+                });
+            }, []);
+
+            return (
+                <div id="wrapper">
+                    {/* 按扭區 */}
+                    <div id="filterBtn">
+                        <a href="#" className="allItem">All</a>
+                        <a href="#" className="cats">CATS</a>
+                        <a href="#" className="food">FOOD</a>
+                        <a href="#" className="view">VIEW</a>
+                    </div>
+
+                    {/* 圖片列表區 */}
+                    <div id="filterList">
+                        <ul>
+                            <li className="view"><img src="../images/photo-1.jpg" alt="" /></li>
+                            <li className="cats"><img src="../images/photo-2.jpg" alt="" /></li>
+                            <li className="food"><img src="../images/photo-3.jpg" alt="" /></li>
+                            <li className="view"><img src="../images/photo-4.jpg" alt="" /></li>
+                            <li className="cats"><img src="../images/photo-5.jpg" alt="" /></li>
+                            <li className="view"><img src="../images/photo-6.jpg" alt="" /></li>
+                            <li className="food"><img src="../images/photo-7.jpg" alt="" /></li>
+                            <li className="cats"><img src="../images/photo-8.jpg" alt="" /></li>
+                        </ul>
+                    </div>
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+<script src="../jQuery/jQuery/js/jquery-1.11.3.min.js"></script>
+
+
+</body>
+
+</html>
