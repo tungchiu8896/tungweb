@@ -65,23 +65,38 @@
                         // 取得視窗高度
                         let curHeight = $(window).height();
 
-                    /*
-                    // 動態生成下方的元素
-                    // 遮罩元素
-                    <div id="mdOverlay"></div>
-                    // 彈跳視窗
-                    <div id="mdWindow">
-                    // 關閉鈕
-                    <div className="mdClose">x</div>
-                    // 被隱藏的內容
-                    <div id="contnetWrap">被隱藏的內容</div>
-                    </div>
-                    */
+                        /*
+                        // 動態生成下方的元素
+                        // 遮罩元素
+                        <div id="mdOverlay"></div>
+                        // 彈跳視窗
+                        <div id="mdWindow">
+                        // 關閉鈕
+                        <div className="mdClose">x</div>
+                        // 被隱藏的內容
+                        <div id="contnetWrap">被隱藏的內容</div>
+                        </div>
+                        */
 
-                        $('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div className="mdClose">x</div><div id="contnetWrap">被隱藏的內容</div></div>');
+                        $('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div className="mdClose">x</div><div id="contnetWrap"></div></div>');
 
-                        $('#mdOverlay,#mdWindow').css({display:'block',opacity:'0'});
-                        $('#mdOverlay').css({height:curHeight});
+                        // 取得外部檔案內容
+                        $('#contWrap').load(setHref);
+
+                        $('#mdOverlay,#mdWindow').css({ display: 'block', opacity: '0' });
+                        // 有動畫
+                        $('#mdOverlay').css({ height: wdHeight, opacity: overlayOpacity });
+                        $('#mdWindow').css({ opacity: '1' });
+
+                        // 視窗縮放時，將新的高度重新給遮罩高度
+                        $(window).on('resize', function () {
+                            var adjHeight = $(window).height();
+                            $('#mdOverlay').css({ height: adjHeight });
+                        });
+
+                        $('#mdOverlay,.mdClose').on('click', function () {
+
+                        })
                     });
                 });
             }, []);
