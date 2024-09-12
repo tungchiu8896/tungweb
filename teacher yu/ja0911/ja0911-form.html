@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    
         <!-- 步驟1:載入React, Babel -->
         <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-        <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useEffect } = React;
+        const { useState } = React;
 
         function App() {
             // #1 使用者名稱
@@ -50,17 +50,27 @@
                             })
                         }
                         </select> - {selCity}
+
+                        <hr/>
+
+                        // #3 複選下拉式清單
+                        <select name="" id="" mutiple size="6" value={selCity2} onChange={(e)=>{setselCity2([...e.target.selectedOptions].map((op)=>op.value))
+
+                        }}>
+                        <option value="" disabled>請選擇</option>
+                        {
+                            arrCity2.map((city)=>{
+                                return <option value={city} key={city}>{city}</option>
+                            })
+                        }
+                        </select> - {selCity2}
+
                     </div>
             )
         }
-        //  步驟4:渲染(顯示)元件到根元件(root)上
-        // const el=document.getElementById('root');
-        // const root=ReactDOM.createRoot(el);
-        // root.render(<App/>);
+
         ReactDOM.createRoot(document.getElementById('root')).render(<App />);
     </script>
-
-<script src="../jQuery/jQuery/js/jquery-1.11.3.min.js"></script>
 
 </body>
 </html>
