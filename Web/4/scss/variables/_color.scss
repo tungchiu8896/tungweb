@@ -1,0 +1,31 @@
+// 色彩規範
+$color:(
+    // 灰階
+    dark:#070707,
+    deep: #1a1a1a,
+    deep-grey: #302f2f,
+    light: #ffffff,
+
+    // 主色調
+    primary: #e70112,
+    secondary: #e6ece5,
+    
+
+    // 透明
+    alpha-w-80: rgba(255, 255, 255, .8),
+    alpha-b-20: rgba(0, 0, 0, .2),
+    alpha-b-40: rgba(0, 0, 0, .4),
+    alpha-b-60: rgba(0, 0, 0, .6),
+    alpha-r-70: rgb(143, 107, 109, .5),
+
+    // 輔助
+    lesser-1:#b20722,
+    lesser-2:#bc00b7,
+    lesser-3:#23b2ff
+
+);
+
+ // 漸層，數列不可列入map-get，需要獨立建一個變數
+ $gradient-w-a: rgba(255, 255, 255, 0.15),rgba(255, 255, 255, .8);
+
+ $box-shadow-mark: 5px 5px 0 rgb(216, 235, 47);

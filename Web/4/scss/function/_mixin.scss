@@ -1,0 +1,36 @@
+@use '../variables' as *;
+
+// 重複使用的，可以整理成mixin
+
+
+
+// @mixin flex-center {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+@mixin bordered ($width: 3px, $color: map-get($color, primary)) {
+    border: $width solid $color;
+}
+
+@mixin multiple-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin basic-btn{
+    background-color: map-get($color, light );
+    color: map-get($color, deep);
+    font-size: map-get($font-size, xl );
+    font-weight: 700;
+    padding: $interval-s $interval-l;
+    border-radius: $radius-full;
+    transition: $base-speed;
+
+    &:hover{
+        background-color: map-get($color, dark );
+        color: map-get($color, light );
+        @include bordered;
+    }
+}
