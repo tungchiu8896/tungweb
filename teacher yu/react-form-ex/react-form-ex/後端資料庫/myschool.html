@@ -1,0 +1,44 @@
+/*ex1 選取student資料表中的全部資料*/
+/*SELECT * FROM students;*/
+
+/*ex2 選取students資料表中姓名+學號的欄位資料*/
+/*SELECT sno, name FROM students;*/
+
+/*ex3 選取students資料表中全部欄位的資料+學號遞減排序*/ 
+/*遞增=> ASC*/
+/*遞減=> DESC*/ 
+/*SELECT * FROM students ORDER BY sno DESC;*/
+
+/*ex4 相似查詢(關鍵字查詢) => 搭配%*/
+SELECT * FROM students WHERE address LIKE'台北市%';
+
+/*ex5 找出1999年生的同學*/
+/*區間資料:寫法1*/
+SELECT * FROM students
+WHERE birthday>='1999/1/1' AND birthday<=1999/12/31;
+
+/*區間資料:寫法2*/
+SELECT * FROM students
+WHERE birthday BETWEEN '1999/1/1' AND '1999/12/31';
+
+/*ex6 找出3學分以下*/
+SELECT * FROM `course`
+WHERE credits <=3;
+
+/*ex7 找出4學分以外*/
+SELECT * FROM `course`
+WHERE credits <> 4;
+
+/*ex8 使用函數，找出地址中有台北市*/
+SELECT * FROM `student`
+WHERE LEFT(address,3)='台北市';
+
+/*ex9 使用函數SUBSTRING()，找出地址中有台北市*/
+SELECT * FROM `student`
+WHERE SUBSTRING(address,1,3)='台北市';
+
+/*ex10 將name欄位拆成2個欄位 => 姓+名*/
+SELECT name, LEFT(name,1), RIGHT(name,2) FROM `student`;
+
+/*ex11 所有學分加總*/
+SELECT SUM(credits) AS '總學分數' FROM `courses`;
